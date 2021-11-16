@@ -14,6 +14,10 @@
 		2252FC7227438191008CC886 /* IMKBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7127438191008CC886 /* IMKBAppTests.swift */; };
 		2252FC7C27438191008CC886 /* IMKBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7B27438191008CC886 /* IMKBAppUITests.swift */; };
 		2252FC7E27438191008CC886 /* IMKBAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7D27438191008CC886 /* IMKBAppUITestsLaunchTests.swift */; };
+		2252FC9127439407008CC886 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC9027439407008CC886 /* ApiClient.swift */; };
+		2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC9227439416008CC886 /* ApiConfiguration.swift */; };
+		2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC9427439450008CC886 /* StocksEndPoint.swift */; };
+		2252FC9727439477008CC886 /* HandshakeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC9627439477008CC886 /* HandshakeEndPoint.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
 		A1E5B8E3863EA7302FF8F7D0 /* Pods_IMKBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +50,10 @@
 		2252FC7727438191008CC886 /* IMKBAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC7B27438191008CC886 /* IMKBAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBAppUITests.swift; sourceTree = "<group>"; };
 		2252FC7D27438191008CC886 /* IMKBAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2252FC9027439407008CC886 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		2252FC9227439416008CC886 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
+		2252FC9427439450008CC886 /* StocksEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksEndPoint.swift; sourceTree = "<group>"; };
+		2252FC9627439477008CC886 /* HandshakeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeEndPoint.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929C0986EE952CFD2A1C559 /* Pods-IMKBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBApp.release.xcconfig"; path = "Target Support Files/Pods-IMKBApp/Pods-IMKBApp.release.xcconfig"; sourceTree = "<group>"; };
 		738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBAppTests.release.xcconfig"; path = "Target Support Files/Pods-IMKBAppTests/Pods-IMKBAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +118,9 @@
 		2252FC5927438190008CC886 /* IMKBApp */ = {
 			isa = PBXGroup;
 			children = (
+				2252FC8C2743933B008CC886 /* Data */,
+				2252FC8B27439316008CC886 /* Domain */,
+				2252FC8A2743930B008CC886 /* Network */,
 				2252FC5A27438190008CC886 /* AppDelegate.swift */,
 				2252FC5C27438190008CC886 /* SceneDelegate.swift */,
 				2252FC6327438191008CC886 /* Assets.xcassets */,
@@ -133,6 +144,55 @@
 				2252FC7D27438191008CC886 /* IMKBAppUITestsLaunchTests.swift */,
 			);
 			path = IMKBAppUITests;
+			sourceTree = "<group>";
+		};
+		2252FC8A2743930B008CC886 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2252FC9027439407008CC886 /* ApiClient.swift */,
+				2252FC9227439416008CC886 /* ApiConfiguration.swift */,
+				2252FC9427439450008CC886 /* StocksEndPoint.swift */,
+				2252FC9627439477008CC886 /* HandshakeEndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2252FC8B27439316008CC886 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2252FC8D274393A7008CC886 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2252FC8C2743933B008CC886 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2252FC8F274393E0008CC886 /* Entities */,
+				2252FC8E274393D7008CC886 /* Api */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2252FC8D274393A7008CC886 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2252FC8E274393D7008CC886 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		2252FC8F274393E0008CC886 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		8F8DCBFF5D949F5E633D4E39 /* Frameworks */ = {
@@ -397,6 +457,10 @@
 			files = (
 				2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
+				2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */,
+				2252FC9127439407008CC886 /* ApiClient.swift in Sources */,
+				2252FC9727439477008CC886 /* HandshakeEndPoint.swift in Sources */,
+				2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
