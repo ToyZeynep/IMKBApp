@@ -12,12 +12,12 @@ import RxCocoa
 
 protocol TokenUseCaseType {
     
-    func getToken(params: [String: Any]) -> Observable<MovieListResponse>
+    func getToken(params: [String: Any]) -> Observable<HandshakeResponse>
 }
 
 struct TokenUseCase: StockListUseCaseType {
    
-    func getToken(params: [String : Any]) -> Observable<MovieListResponse> {
+    func getToken(params: [String : Any]) -> Observable<HandshakeResponse> {
         return ApiClient.getToken(params: params)
     }
     

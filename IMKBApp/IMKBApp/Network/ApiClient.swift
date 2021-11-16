@@ -12,7 +12,7 @@ import Alamofire
 class ApiClient {
     
     
-    static func getToken(params: [String: Any]) -> Observable<MovieListResponse> {
+    static func getToken(params: [String: Any]) -> Observable<HandshakeResponse> {
         return request(HandshakeEndPoint.token(params: params))
     }
     
