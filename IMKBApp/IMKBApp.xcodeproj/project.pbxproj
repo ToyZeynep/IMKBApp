@@ -10,10 +10,7 @@
 		1C367524E3E1BD5252BEA498 /* Pods_IMKBApp_IMKBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD16EF944B6D8151DF31C1C /* Pods_IMKBApp_IMKBAppUITests.framework */; };
 		2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5A27438190008CC886 /* AppDelegate.swift */; };
 		2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5C27438190008CC886 /* SceneDelegate.swift */; };
-		2252FC5F27438190008CC886 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5E27438190008CC886 /* ViewController.swift */; };
-		2252FC6227438190008CC886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6027438190008CC886 /* Main.storyboard */; };
 		2252FC6427438191008CC886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6327438191008CC886 /* Assets.xcassets */; };
-		2252FC6727438191008CC886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6527438191008CC886 /* LaunchScreen.storyboard */; };
 		2252FC7227438191008CC886 /* IMKBAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7127438191008CC886 /* IMKBAppTests.swift */; };
 		2252FC7C27438191008CC886 /* IMKBAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7B27438191008CC886 /* IMKBAppUITests.swift */; };
 		2252FC7E27438191008CC886 /* IMKBAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC7D27438191008CC886 /* IMKBAppUITestsLaunchTests.swift */; };
@@ -42,10 +39,7 @@
 		2252FC5727438190008CC886 /* IMKBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC5A27438190008CC886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2252FC5C27438190008CC886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2252FC5E27438190008CC886 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2252FC6127438190008CC886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2252FC6327438191008CC886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2252FC6627438191008CC886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2252FC6827438191008CC886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2252FC6D27438191008CC886 /* IMKBAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC7127438191008CC886 /* IMKBAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBAppTests.swift; sourceTree = "<group>"; };
@@ -118,10 +112,7 @@
 			children = (
 				2252FC5A27438190008CC886 /* AppDelegate.swift */,
 				2252FC5C27438190008CC886 /* SceneDelegate.swift */,
-				2252FC5E27438190008CC886 /* ViewController.swift */,
-				2252FC6027438190008CC886 /* Main.storyboard */,
 				2252FC6327438191008CC886 /* Assets.xcassets */,
-				2252FC6527438191008CC886 /* LaunchScreen.storyboard */,
 				2252FC6827438191008CC886 /* Info.plist */,
 			);
 			path = IMKBApp;
@@ -164,7 +155,6 @@
 				9603D10389B46DD1450ED030 /* Pods-IMKBAppTests.debug.xcconfig */,
 				738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -277,9 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2252FC6727438191008CC886 /* LaunchScreen.storyboard in Resources */,
 				2252FC6427438191008CC886 /* Assets.xcassets in Resources */,
-				2252FC6227438190008CC886 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2252FC5F27438190008CC886 /* ViewController.swift in Sources */,
 				2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
 			);
@@ -444,25 +431,6 @@
 			targetProxy = 2252FC7827438191008CC886 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2252FC6027438190008CC886 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2252FC6127438190008CC886 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2252FC6527438191008CC886 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2252FC6627438191008CC886 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2252FC7F27438191008CC886 /* Debug */ = {
@@ -594,7 +562,6 @@
 				INFOPLIST_FILE = IMKBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -623,7 +590,6 @@
 				INFOPLIST_FILE = IMKBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
