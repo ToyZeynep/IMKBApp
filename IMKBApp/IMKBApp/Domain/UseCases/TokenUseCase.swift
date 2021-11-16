@@ -15,8 +15,8 @@ protocol TokenUseCaseType {
     func getToken(params: [String: Any]) -> Observable<HandshakeResponse>
 }
 
-struct TokenUseCase: StockListUseCaseType {
-   
+struct TokenUseCase: TokenUseCaseType {
+
     func getToken(params: [String : Any]) -> Observable<HandshakeResponse> {
         return ApiClient.getToken(params: params)
     }

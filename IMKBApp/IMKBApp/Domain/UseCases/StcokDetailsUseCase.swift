@@ -12,13 +12,13 @@ import RxCocoa
 
 protocol StockDetailsUseCaseType {
     
-    func stockDetails(params: [String: Any]) -> Observable<MovieListResponse>
+    func stockDetails(params: [String: Any]) -> Observable<StockDetailsResponse>
 }
 
 
 struct StockDetailsUseCase: StockDetailsUseCaseType {
    
-    func stockDetails(params: [String : Any]) -> Observable<MovieListResponse> {
+    func stockDetails(params: [String : Any]) -> Observable<StockDetailsResponse> {
         return ApiClient.stockDetails(params: params)
     }
     

@@ -28,6 +28,15 @@
 		2252FCA72743BCA7008CC886 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCA62743BCA7008CC886 /* Status.swift */; };
 		2252FCA92743C287008CC886 /* Stocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCA82743C287008CC886 /* Stocks.swift */; };
 		2252FCAB2743C3C9008CC886 /* GraphicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCAA2743C3C9008CC886 /* GraphicData.swift */; };
+		2252FCAF2743C890008CC886 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCAE2743C890008CC886 /* LoginView.swift */; };
+		2252FCB12743C89E008CC886 /* LoginViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCB02743C89E008CC886 /* LoginViewExt.swift */; };
+		2252FCB32743C8B1008CC886 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCB22743C8B1008CC886 /* LoginViewController.swift */; };
+		2252FCB52743C8BE008CC886 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCB42743C8BE008CC886 /* LoginViewModel.swift */; };
+		2252FCB72743C8D8008CC886 /* LoginViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCB62743C8D8008CC886 /* LoginViewModelImpl.swift */; };
+		2252FCBA2743CA8F008CC886 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCB92743CA8F008CC886 /* ViewExt.swift */; };
+		2252FCBC2743D045008CC886 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBB2743D045008CC886 /* BindableType.swift */; };
+		2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBD2743D566008CC886 /* UIDeviceExt.swift */; };
+		2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBF2743ECFF008CC886 /* TransitionExt.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
 		A1E5B8E3863EA7302FF8F7D0 /* Pods_IMKBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +83,15 @@
 		2252FCA62743BCA7008CC886 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		2252FCA82743C287008CC886 /* Stocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stocks.swift; sourceTree = "<group>"; };
 		2252FCAA2743C3C9008CC886 /* GraphicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicData.swift; sourceTree = "<group>"; };
+		2252FCAE2743C890008CC886 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2252FCB02743C89E008CC886 /* LoginViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewExt.swift; sourceTree = "<group>"; };
+		2252FCB22743C8B1008CC886 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2252FCB42743C8BE008CC886 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2252FCB62743C8D8008CC886 /* LoginViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelImpl.swift; sourceTree = "<group>"; };
+		2252FCB92743CA8F008CC886 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		2252FCBB2743D045008CC886 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		2252FCBD2743D566008CC886 /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
+		2252FCBF2743ECFF008CC886 /* TransitionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929C0986EE952CFD2A1C559 /* Pods-IMKBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBApp.release.xcconfig"; path = "Target Support Files/Pods-IMKBApp/Pods-IMKBApp.release.xcconfig"; sourceTree = "<group>"; };
 		738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBAppTests.release.xcconfig"; path = "Target Support Files/Pods-IMKBAppTests/Pods-IMKBAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +156,8 @@
 		2252FC5927438190008CC886 /* IMKBApp */ = {
 			isa = PBXGroup;
 			children = (
+				2252FCB82743CA7B008CC886 /* Utils */,
+				2252FCAC2743C836008CC886 /* Presentation */,
 				2252FC8C2743933B008CC886 /* Data */,
 				2252FC8B27439316008CC886 /* Domain */,
 				2252FC8A2743930B008CC886 /* Network */,
@@ -223,6 +243,37 @@
 				2252FCAA2743C3C9008CC886 /* GraphicData.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		2252FCAC2743C836008CC886 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2252FCAD2743C849008CC886 /* LoginView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2252FCAD2743C849008CC886 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				2252FCAE2743C890008CC886 /* LoginView.swift */,
+				2252FCB02743C89E008CC886 /* LoginViewExt.swift */,
+				2252FCB22743C8B1008CC886 /* LoginViewController.swift */,
+				2252FCB42743C8BE008CC886 /* LoginViewModel.swift */,
+				2252FCB62743C8D8008CC886 /* LoginViewModelImpl.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		2252FCB82743CA7B008CC886 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2252FCB92743CA8F008CC886 /* ViewExt.swift */,
+				2252FCBB2743D045008CC886 /* BindableType.swift */,
+				2252FCBD2743D566008CC886 /* UIDeviceExt.swift */,
+				2252FCBF2743ECFF008CC886 /* TransitionExt.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8F8DCBFF5D949F5E633D4E39 /* Frameworks */ = {
@@ -487,14 +538,23 @@
 			files = (
 				2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
+				2252FCB12743C89E008CC886 /* LoginViewExt.swift in Sources */,
 				2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */,
+				2252FCBA2743CA8F008CC886 /* ViewExt.swift in Sources */,
+				2252FCB32743C8B1008CC886 /* LoginViewController.swift in Sources */,
 				2252FCA52743BC85008CC886 /* Error.swift in Sources */,
 				2252FCA92743C287008CC886 /* Stocks.swift in Sources */,
 				2252FC9127439407008CC886 /* ApiClient.swift in Sources */,
+				2252FCB52743C8BE008CC886 /* LoginViewModel.swift in Sources */,
 				2252FCAB2743C3C9008CC886 /* GraphicData.swift in Sources */,
+				2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */,
+				2252FCBC2743D045008CC886 /* BindableType.swift in Sources */,
 				2252FC9D2743A9B2008CC886 /* TokenUseCase.swift in Sources */,
+				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
 				2252FCA12743BBE5008CC886 /* StockDetailsResponse.swift in Sources */,
 				2252FC9727439477008CC886 /* HandshakeEndPoint.swift in Sources */,
+				2252FCAF2743C890008CC886 /* LoginView.swift in Sources */,
+				2252FCB72743C8D8008CC886 /* LoginViewModelImpl.swift in Sources */,
 				2252FC992743A987008CC886 /* StockListUseCase.swift in Sources */,
 				2252FCA72743BCA7008CC886 /* Status.swift in Sources */,
 				2252FCA32743BC0F008CC886 /* HandshakeResponse.swift in Sources */,

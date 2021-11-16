@@ -16,11 +16,11 @@ class ApiClient {
         return request(HandshakeEndPoint.token(params: params))
     }
     
-    static func stockList(params: [String: Any]) -> Observable<MovieListResponse> {
+    static func stockList(params: [String: Any]) -> Observable<StockListResponse> {
         return request(StocksEndPoint.stockList(params: params))
     }
     
-    static func stockDetails(params: [String: Any]) -> Observable<MovieDetailsResponse> {
+    static func stockDetails(params: [String: Any]) -> Observable<StockDetailsResponse> {
         return request(StocksEndPoint.stockDetails(params: params))
     }
     
