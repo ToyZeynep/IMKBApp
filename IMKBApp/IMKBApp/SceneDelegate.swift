@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController?
-    //let router = AppCoordinator()
+    let router = AppCoordinator()
 
     
 
@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-     //   router.setRoot(for: window!)
+        router.setRoot(for: window!)
         
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white

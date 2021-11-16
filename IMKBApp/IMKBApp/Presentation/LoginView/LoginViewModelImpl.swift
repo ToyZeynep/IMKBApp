@@ -27,12 +27,14 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
     
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
+        
+        getAuth()
     }
    
     func getAuth(){
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        var modelName = UIDevice.modelName
-        var systemVersion = UIDevice.current.systemVersion
+        let modelName = UIDevice.modelName
+        let systemVersion = UIDevice.current.systemVersion
         var params : [String: Any] = [String: Any]()
         
         params["deviceId"] = deviceID

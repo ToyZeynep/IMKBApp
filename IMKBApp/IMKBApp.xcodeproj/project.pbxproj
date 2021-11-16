@@ -37,6 +37,7 @@
 		2252FCBC2743D045008CC886 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBB2743D045008CC886 /* BindableType.swift */; };
 		2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBD2743D566008CC886 /* UIDeviceExt.swift */; };
 		2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBF2743ECFF008CC886 /* TransitionExt.swift */; };
+		2252FCC32743F743008CC886 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCC22743F743008CC886 /* AppCoordinator.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
 		A1E5B8E3863EA7302FF8F7D0 /* Pods_IMKBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		2252FCBB2743D045008CC886 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		2252FCBD2743D566008CC886 /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
 		2252FCBF2743ECFF008CC886 /* TransitionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
+		2252FCC22743F743008CC886 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929C0986EE952CFD2A1C559 /* Pods-IMKBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBApp.release.xcconfig"; path = "Target Support Files/Pods-IMKBApp/Pods-IMKBApp.release.xcconfig"; sourceTree = "<group>"; };
 		738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBAppTests.release.xcconfig"; path = "Target Support Files/Pods-IMKBAppTests/Pods-IMKBAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		2252FC5927438190008CC886 /* IMKBApp */ = {
 			isa = PBXGroup;
 			children = (
+				2252FCC12743F729008CC886 /* Coordinators */,
 				2252FCB82743CA7B008CC886 /* Utils */,
 				2252FCAC2743C836008CC886 /* Presentation */,
 				2252FC8C2743933B008CC886 /* Data */,
@@ -274,6 +277,14 @@
 				2252FCBF2743ECFF008CC886 /* TransitionExt.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2252FCC12743F729008CC886 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2252FCC22743F743008CC886 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		8F8DCBFF5D949F5E633D4E39 /* Frameworks */ = {
@@ -538,6 +549,7 @@
 			files = (
 				2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
+				2252FCC32743F743008CC886 /* AppCoordinator.swift in Sources */,
 				2252FCB12743C89E008CC886 /* LoginViewExt.swift in Sources */,
 				2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */,
 				2252FCBA2743CA8F008CC886 /* ViewExt.swift in Sources */,
