@@ -13,15 +13,15 @@ class ApiClient {
     
     
     static func getToken(params: [String: Any]) -> Observable<MovieListResponse> {
-        return request(HandshakeEndPoint.movieList(params: params))
+        return request(HandshakeEndPoint.token(params: params))
     }
     
     static func stockList(params: [String: Any]) -> Observable<MovieListResponse> {
-        return request(StoksEndPoint.movieList(params: params))
+        return request(StocksEndPoint.stockList(params: params))
     }
     
     static func stockDetails(params: [String: Any]) -> Observable<MovieDetailsResponse> {
-        return request(StocksEndPoint.movieDetails(params: params))
+        return request(StocksEndPoint.stockDetails(params: params))
     }
     
     
