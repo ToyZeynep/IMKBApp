@@ -12,6 +12,8 @@ import XCoordinator
 import Action
 
 class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, StockListViewModelOutput , StockListViewModelStoredProperties {
+    var selectedStock: AnyObserver<Stocks>
+    
    
     
    
@@ -23,7 +25,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     private(set) lazy var selectedStock = selectedStockActions.inputs
     
     // MARK: -Actions-
-    lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] movie in
+    lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock  in
        //self.router.rx.trigger(.movieDetail(omdbId: movie.imdbID!))
     }
     
@@ -31,7 +33,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     
     var stockListResponse = PublishSubject<StockListResponse>()
    
-    var stockList = PublishSubject<[Stocks]>
+    var stockList = PublishSubject<[Stocks]>()
    
     internal let stockListUseCase: StockListUseCase
     
@@ -47,19 +49,17 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     }
 
     func fetchStockList(searchText: String , page: Int ) {
-        var params: [String: Any] = [String: Any]()
-        params["page"] = page
-        params["s"] = searchText
-        params["type"] = "movie"
-        movieListUseCase.getMovieList(params: params).subscribe(onNext: { response in
-            if response.movies != nil {
-                self.movieListResponse.onNext(response)
-            } else {
-                self.errorMessage.onNext("There is no such movie")
-            }
-        }).disposed(by: disposeBag)
+    //    var params: [String: Any] = [String: Any]()
+    //    params["page"] = page
+    //    params["s"] = searchText
+    //    params["type"] = "movie"
+    //    movieListUseCase.getMovieList(params: params).subscribe(onNext: { response in
+    //        if response.movies != nil {
+    //            self.movieListResponse.onNext(response)
+    //        } else {
+    //            self.errorMessage.onNext("There is no such movie")
+    //        }
+    //    }).disposed(by: disposeBag)
     }
-    func navigateToFavorites()  {
-        router.trigger(.favoriteList)
-    }
+   
 }

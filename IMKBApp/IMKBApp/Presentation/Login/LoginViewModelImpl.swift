@@ -45,7 +45,7 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
         
         tokenUseCase.getToken(params: params).subscribe(onNext : {response in
             if  response.status?.isSuccess != false {
-              //  router.trigger(<#T##RouteType#>)
+                self.router.trigger(.stockList)
             }
             
             

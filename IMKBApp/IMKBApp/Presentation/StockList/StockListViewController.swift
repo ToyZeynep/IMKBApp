@@ -15,7 +15,7 @@ import Kingfisher
 import Action
 
 
-class MovieListViewController: UIViewController, BindableType, UICollectionViewDelegate , UITextFieldDelegate {
+class StockListViewController: UIViewController, BindableType, UICollectionViewDelegate , UITextFieldDelegate {
     
     private let cellIdentifier = String(describing: StockListCell.self)
     let disposeBag = DisposeBag()
