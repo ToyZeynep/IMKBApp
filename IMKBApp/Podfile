@@ -16,6 +16,8 @@ target 'IMKBApp' do
   pod 'Kingfisher', '~> 5.0'
   pod 'Action'
   pod 'Material', '~> 3.1.0'
+  pod 'CryptoSwift', '~> 1.4.1'
+
   target 'IMKBAppTests' do
     inherit! :search_paths
     # Pods for testing

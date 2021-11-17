@@ -38,6 +38,13 @@
 		2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBD2743D566008CC886 /* UIDeviceExt.swift */; };
 		2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCBF2743ECFF008CC886 /* TransitionExt.swift */; };
 		2252FCC32743F743008CC886 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCC22743F743008CC886 /* AppCoordinator.swift */; };
+		2252FCC627441943008CC886 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCC527441943008CC886 /* StockListView.swift */; };
+		2252FCC827441955008CC886 /* StockListViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCC727441955008CC886 /* StockListViewExt.swift */; };
+		2252FCCA2744197B008CC886 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCC92744197B008CC886 /* StockListViewController.swift */; };
+		2252FCCC27441993008CC886 /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCCB27441993008CC886 /* StockListViewModel.swift */; };
+		2252FCCE274419AD008CC886 /* StockListViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCCD274419AD008CC886 /* StockListViewModelImpl.swift */; };
+		2252FCD0274419FF008CC886 /* StockListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCCF274419FF008CC886 /* StockListCell.swift */; };
+		2252FCD227441A1B008CC886 /* StockListCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCD127441A1B008CC886 /* StockListCellExt.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
 		A1E5B8E3863EA7302FF8F7D0 /* Pods_IMKBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +101,13 @@
 		2252FCBD2743D566008CC886 /* UIDeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExt.swift; sourceTree = "<group>"; };
 		2252FCBF2743ECFF008CC886 /* TransitionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExt.swift; sourceTree = "<group>"; };
 		2252FCC22743F743008CC886 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2252FCC527441943008CC886 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
+		2252FCC727441955008CC886 /* StockListViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewExt.swift; sourceTree = "<group>"; };
+		2252FCC92744197B008CC886 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
+		2252FCCB27441993008CC886 /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
+		2252FCCD274419AD008CC886 /* StockListViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModelImpl.swift; sourceTree = "<group>"; };
+		2252FCCF274419FF008CC886 /* StockListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCell.swift; sourceTree = "<group>"; };
+		2252FCD127441A1B008CC886 /* StockListCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCellExt.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929C0986EE952CFD2A1C559 /* Pods-IMKBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBApp.release.xcconfig"; path = "Target Support Files/Pods-IMKBApp/Pods-IMKBApp.release.xcconfig"; sourceTree = "<group>"; };
 		738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBAppTests.release.xcconfig"; path = "Target Support Files/Pods-IMKBAppTests/Pods-IMKBAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,12 +265,13 @@
 		2252FCAC2743C836008CC886 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2252FCAD2743C849008CC886 /* LoginView */,
+				2252FCC4274418ED008CC886 /* StockList */,
+				2252FCAD2743C849008CC886 /* Login */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		2252FCAD2743C849008CC886 /* LoginView */ = {
+		2252FCAD2743C849008CC886 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				2252FCAE2743C890008CC886 /* LoginView.swift */,
@@ -265,7 +280,7 @@
 				2252FCB42743C8BE008CC886 /* LoginViewModel.swift */,
 				2252FCB62743C8D8008CC886 /* LoginViewModelImpl.swift */,
 			);
-			path = LoginView;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2252FCB82743CA7B008CC886 /* Utils */ = {
@@ -285,6 +300,20 @@
 				2252FCC22743F743008CC886 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		2252FCC4274418ED008CC886 /* StockList */ = {
+			isa = PBXGroup;
+			children = (
+				2252FCC527441943008CC886 /* StockListView.swift */,
+				2252FCC727441955008CC886 /* StockListViewExt.swift */,
+				2252FCCB27441993008CC886 /* StockListViewModel.swift */,
+				2252FCCD274419AD008CC886 /* StockListViewModelImpl.swift */,
+				2252FCCF274419FF008CC886 /* StockListCell.swift */,
+				2252FCD127441A1B008CC886 /* StockListCellExt.swift */,
+				2252FCC92744197B008CC886 /* StockListViewController.swift */,
+			);
+			path = StockList;
 			sourceTree = "<group>";
 		};
 		8F8DCBFF5D949F5E633D4E39 /* Frameworks */ = {
@@ -549,21 +578,27 @@
 			files = (
 				2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
+				2252FCCA2744197B008CC886 /* StockListViewController.swift in Sources */,
 				2252FCC32743F743008CC886 /* AppCoordinator.swift in Sources */,
 				2252FCB12743C89E008CC886 /* LoginViewExt.swift in Sources */,
 				2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */,
 				2252FCBA2743CA8F008CC886 /* ViewExt.swift in Sources */,
+				2252FCC627441943008CC886 /* StockListView.swift in Sources */,
 				2252FCB32743C8B1008CC886 /* LoginViewController.swift in Sources */,
+				2252FCD227441A1B008CC886 /* StockListCellExt.swift in Sources */,
 				2252FCA52743BC85008CC886 /* Error.swift in Sources */,
 				2252FCA92743C287008CC886 /* Stocks.swift in Sources */,
 				2252FC9127439407008CC886 /* ApiClient.swift in Sources */,
 				2252FCB52743C8BE008CC886 /* LoginViewModel.swift in Sources */,
 				2252FCAB2743C3C9008CC886 /* GraphicData.swift in Sources */,
+				2252FCD0274419FF008CC886 /* StockListCell.swift in Sources */,
 				2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */,
 				2252FCBC2743D045008CC886 /* BindableType.swift in Sources */,
 				2252FC9D2743A9B2008CC886 /* TokenUseCase.swift in Sources */,
 				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
 				2252FCA12743BBE5008CC886 /* StockDetailsResponse.swift in Sources */,
+				2252FCCE274419AD008CC886 /* StockListViewModelImpl.swift in Sources */,
+				2252FCCC27441993008CC886 /* StockListViewModel.swift in Sources */,
 				2252FC9727439477008CC886 /* HandshakeEndPoint.swift in Sources */,
 				2252FCAF2743C890008CC886 /* LoginView.swift in Sources */,
 				2252FCB72743C8D8008CC886 /* LoginViewModelImpl.swift in Sources */,
@@ -571,6 +606,7 @@
 				2252FCA72743BCA7008CC886 /* Status.swift in Sources */,
 				2252FCA32743BC0F008CC886 /* HandshakeResponse.swift in Sources */,
 				2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */,
+				2252FCC827441955008CC886 /* StockListViewExt.swift in Sources */,
 				2252FC9B2743A9A4008CC886 /* StcokDetailsUseCase.swift in Sources */,
 				2252FC9F2743BBCB008CC886 /* StockListResponse.swift in Sources */,
 			);

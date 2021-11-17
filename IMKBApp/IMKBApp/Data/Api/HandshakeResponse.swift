@@ -6,13 +6,14 @@
 //
 
 import Foundation
-import Foundation
+import CryptoSwift
+
 struct HandshakeResponse: Codable {
-    let aesKey : String?
-    let aesIV : String?
-    let authorization : String?
-    let lifeTime : String?
-    let status : Status?
+    var aesKey : String?
+    var aesIV : String?
+    var authorization : String?
+    var lifeTime : String?
+    var status : Status?
 
     enum CodingKeys: String, CodingKey {
 
@@ -31,5 +32,12 @@ struct HandshakeResponse: Codable {
         lifeTime = try values.decodeIfPresent(String.self, forKey: .lifeTime)
         status = try values.decodeIfPresent(Status.self, forKey: .status)
     }
-
+    
+    func getPeriodParameter(periodTag: String) -> String {
+        let intKey = [UInt8](base64: aesKey!)
+        let intIV = [UInt8](base64: aesIV!)
+        let aes = try? AES(key: intKey, blockMode: CBC(iv: intIV), padding: .pkcs7)
+        let text = try? aes?.encrypt(Array(periodTag.utf8))
+        return (text?.toBase64())!
+    }
 }
