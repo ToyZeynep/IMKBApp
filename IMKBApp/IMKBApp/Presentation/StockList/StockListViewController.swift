@@ -53,14 +53,32 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
     }
     
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            self.viewModel.fetchStockList(handshakeResponse: self.viewModel.storedProperties.handshakeResponse, periodTag: "all")
+        } else {
+            filterBySymbol(searchText: textField.text!)
+        }
+        
+        return true
+    }
+    
+    func filterBySymbol(searchText: String){
+        var filterList = [Stocks]()
+        for stock in self.stockList {
+            if stock.getSymbol(aesKey: self.viewModel.storedProperties.handshakeResponse.aesKey!, aesIV: self.viewModel.storedProperties.handshakeResponse.aesIV!) == searchText.uppercased() {
+                filterList.append(stock)
+            }
+        }
+        self.viewModel.output.stockList.onNext(filterList)
+    }
+    
+    
     
     func bindViewModel() {
         
-        viewModel.output.stockListResponse.subscribe(onNext: {[self] response in
-            
-            self.stockList.append(contentsOf: response.stocks!)
-            self.viewModel.output.stockList.onNext(self.stockList)
-            
+        viewModel.output.stockList.subscribe(onNext: { stockList in
+            self.stockList = stockList
         }).disposed(by:disposeBag)
         
         viewModel.output.stockList.bind(to: stockListView.stockListTableView.rx.items(cellIdentifier:cellIdentifier , cellType: StockListCell.self)){[self] row, model, cell in

@@ -30,6 +30,8 @@ protocol StockListViewModel{
     var input: StockListViewModelInput { get }
     var output: StockListViewModelOutput { get }
     var storedProperties : StockListViewModelStoredProperties { get }
+    
+    func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String )
     func toLeftMenu()
 }
 
