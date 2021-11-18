@@ -11,23 +11,23 @@ import RxSwift
 import XCoordinator
 
 enum StockListRoute: Route {
-    case stockList
-  //  case stockDetail
-    //case leftMenu
+    case stockList(hanshakeRespose : HandshakeResponse)
+  //case stockDetail
+  //case leftMenu
 }
 
 class StockListCoordinator: NavigationCoordinator<StockListRoute> {
     
-    init() {
-        super.init(initialRoute: .stockList)
+    init(handshakeResponse : HandshakeResponse) {
+        super.init(initialRoute : .stockList(hanshakeRespose: handshakeResponse))
     }
     
     override func prepareTransition(for route: StockListRoute) -> NavigationTransition {
         switch route {
             
-        case .stockList :
+        case .stockList(let handshakeResponse) :
             let viewController = StockListViewController()
-            let viewModel = StockListViewModelImpl(router: unownedRouter)
+            let viewModel = StockListViewModelImpl(router: unownedRouter , handshakeResponse : handshakeResponse )
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
 

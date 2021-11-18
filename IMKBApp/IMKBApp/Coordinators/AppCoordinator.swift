@@ -11,7 +11,7 @@ import RxSwift
 import XCoordinator
 
 enum AppRoute: Route {
-    case stockList
+    case stockList(hanshakeRespose : HandshakeResponse)
     case login
 }
 
@@ -30,10 +30,11 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
 
-        case .stockList :
-            let coordinator = StockListCoordinator()
+        case .stockList(let handshakeResponse):
+            let  coordinator = StockListCoordinator(handshakeResponse: handshakeResponse)
             return .presentFullScreen(coordinator, animation: .default)
             
         }
     }
 }
+

@@ -14,7 +14,6 @@ import Foundation
 extension StockListView {
     func setStockListContentView()  {
         addSubview(stockListContentView)
-        stockListContentView.backgroundColor = .clear
         if #available(iOS 11.0, *) {
             stockListContentView.setTop(equalTo: safeAreaLayoutGuide.topAnchor)
         } else {
@@ -23,7 +22,9 @@ extension StockListView {
         stockListContentView.setRight(equalTo: rightAnchor)
         stockListContentView.setBottom(equalTo: bottomAnchor)
         
-        
+        setStockListToolBarView()
+        setStockListSearchTextField()
+        setstockListTableView()
     }
     func setStockListToolBarView(){
         stockListContentView.addSubview(stockListToolBarView)
@@ -31,7 +32,8 @@ extension StockListView {
         stockListToolBarView.setRight(equalTo: stockListContentView.rightAnchor, constant: -10)
         stockListToolBarView.setLeft(equalTo: stockListContentView.leftAnchor, constant: 10)
         stockListToolBarView.setHeight(height: 50)
-        
+        setStockListLeftMenuButton()
+        setStockListTopLabel()
         
     }
     func setStockListLeftMenuButton(){

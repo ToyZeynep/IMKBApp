@@ -16,7 +16,7 @@ protocol LoginViewModelInput {
 }
 
 protocol LoginViewModelOutput {
-    
+    var handshakeResponse: PublishSubject<HandshakeResponse> { get }
 }
 
 protocol LoginViewModel {

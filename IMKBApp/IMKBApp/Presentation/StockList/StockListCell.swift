@@ -33,22 +33,35 @@ class StockListCell: UITableViewCell {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.text = "symbol label"
-        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "Sembol"
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
+    
+    lazy var stockListCellPriceLabel : UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = UIColor.black
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "Fiyat"
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    } ()
+ 
     
     lazy var stockListCellDifferenceLabel : UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "difference label"
-        label.numberOfLines = 0
+        label.text = "Fark"
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -57,46 +70,57 @@ class StockListCell: UITableViewCell {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "difference label"
-        label.numberOfLines = 0
+        label.text = "Hacim"
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
     
-    lazy var stockListCellPurchaseLabel : UILabel = {
+    lazy var stockListCellBidLabel : UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "purchase label"
-        label.numberOfLines = 0
+        label.text = "Alış"
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
  
-    lazy var stockListCellSalesLabel : UILabel = {
+
+    lazy var stockListCellOfferLabel : UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "sales label"
-        label.numberOfLines = 0
+        label.text = "Satış"
+        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
+    lazy var stockListCellVariationLabel : UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = UIColor.black
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "Değişim"
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "up")
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let myString = NSMutableAttributedString(string: "Değişim")
+        myString.append(attachmentString)
+        label.attributedText = myString
+        return label
+    } ()
     
-    lazy var stockListCellVariationImageView : UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .top
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.masksToBounds = true
-      return imageView
-    }()
+
     
     lazy var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
@@ -108,6 +132,7 @@ class StockListCell: UITableViewCell {
           super.init(style: style, reuseIdentifier: reuseIdentifier)
           sizeToFit()
           layoutIfNeeded()
+        setStockListCellContentView ()
       }
       
       required init?(coder aDecoder: NSCoder) {

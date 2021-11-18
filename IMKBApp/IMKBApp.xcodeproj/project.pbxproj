@@ -46,6 +46,7 @@
 		2252FCD0274419FF008CC886 /* StockListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCCF274419FF008CC886 /* StockListCell.swift */; };
 		2252FCD227441A1B008CC886 /* StockListCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCD127441A1B008CC886 /* StockListCellExt.swift */; };
 		22FC5D132745026000D7DD07 /* StockListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC5D122745026000D7DD07 /* StockListCoordinator.swift */; };
+		22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
 		A1E5B8E3863EA7302FF8F7D0 /* Pods_IMKBAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		2252FCCF274419FF008CC886 /* StockListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCell.swift; sourceTree = "<group>"; };
 		2252FCD127441A1B008CC886 /* StockListCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCellExt.swift; sourceTree = "<group>"; };
 		22FC5D122745026000D7DD07 /* StockListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCoordinator.swift; sourceTree = "<group>"; };
+		22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderConstant.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6929C0986EE952CFD2A1C559 /* Pods-IMKBApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBApp.release.xcconfig"; path = "Target Support Files/Pods-IMKBApp/Pods-IMKBApp.release.xcconfig"; sourceTree = "<group>"; };
 		738B2BDF08189BD61422CE3C /* Pods-IMKBAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKBAppTests.release.xcconfig"; path = "Target Support Files/Pods-IMKBAppTests/Pods-IMKBAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2252FC9227439416008CC886 /* ApiConfiguration.swift */,
 				2252FC9427439450008CC886 /* StocksEndPoint.swift */,
 				2252FC9627439477008CC886 /* HandshakeEndPoint.swift */,
+				22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				2252FCBE2743D566008CC886 /* UIDeviceExt.swift in Sources */,
 				2252FCBC2743D045008CC886 /* BindableType.swift in Sources */,
 				2252FC9D2743A9B2008CC886 /* TokenUseCase.swift in Sources */,
+				22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */,
 				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
 				2252FCA12743BBE5008CC886 /* StockDetailsResponse.swift in Sources */,
 				2252FCCE274419AD008CC886 /* StockListViewModelImpl.swift in Sources */,

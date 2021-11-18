@@ -15,13 +15,17 @@ import Kingfisher
 import Action
 
 
-class StockListViewController: UIViewController, BindableType, UICollectionViewDelegate , UITextFieldDelegate {
+class StockListViewController: UIViewController, BindableType, UITableViewDelegate, UITextFieldDelegate {
+ 
+    
     
     private let cellIdentifier = String(describing: StockListCell.self)
+    private let headerId = "headerId"
     let disposeBag = DisposeBag()
     var stockListView = StockListView()
     var viewModel: StockListViewModel!
     var stockList = [Stocks]()
+    var stocks = [Stocks]()
     
     
     override func loadView() {
@@ -29,7 +33,7 @@ class StockListViewController: UIViewController, BindableType, UICollectionViewD
     }
     
     override func viewDidLoad() {
-        registerTableView()
+        registerTableViewCell()
         stockListView.stockListSearchTextField.delegate = self
     }
     
@@ -48,71 +52,65 @@ class StockListViewController: UIViewController, BindableType, UICollectionViewD
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-  
+    
     
     func bindViewModel() {
-      
-        viewModel.output.errorMessage.subscribe(onNext : { errorMessage in
-            self.showAlert(title: "ERROR!", message: errorMessage)
-        }).disposed(by: disposeBag)
         
-        movieListView.movieListSearchButton.rx.tapGesture().when(.recognized).subscribe(onNext:{ [self] gesture in
-            self.searchRules()
-        }).disposed(by: disposeBag)
-        
-        
-        viewModel.output.movieListResponse.subscribe(onNext: {[self] response in
-            totalPageCount = response.getTotalPageNumber()
-            self.movieList.append(contentsOf: response.movies!)
-            self.viewModel.output.movieList.onNext(self.movieList)
-            self.isLoading = false
+        viewModel.output.stockListResponse.subscribe(onNext: {[self] response in
+            
+            self.stockList.append(contentsOf: response.stocks!)
+            self.viewModel.output.stockList.onNext(self.stockList)
+            
         }).disposed(by:disposeBag)
         
-        viewModel.output.movieList.bind(to: movieListView.movieListCollectionView.rx.items(cellIdentifier:cellIdentifier , cellType: MovieListCell.self)){[self] _, model, cell in
-            if (indexPath.row % 2) {
+        viewModel.output.stockList.bind(to: stockListView.stockListTableView.rx.items(cellIdentifier:cellIdentifier , cellType: StockListCell.self)){[self] row, model, cell in
+            let up = "up"
+            let image1 = UIImage(named: up)
+            let down = "down"
+            let image2 = UIImage(named: down)
+            var image = UIImage()
+            if model.isDown == true {
+                image = image2!
+            } else{
+                image = image1!
+            }
+            
+         //   cell.stockListCellVariationLabel.image = image
+            cell.stockListCellSymbolLabel.text =  model.getSymbol(aesKey: self.viewModel.storedProperties.handshakeResponse.aesKey!, aesIV: self.viewModel.storedProperties.handshakeResponse.aesIV!)
+            cell.stockListCellPriceLabel.text = String(format: "%0.2f" , model.price!)
+            cell.stockListCellDifferenceLabel.text = String(format: "%0.2f" , model.difference!)
+            cell.stockListCellVolumeLabel.text = String(format: "%0.2f" , model.volume!)
+            cell.stockListCellBidLabel.text = String(format: "%0.2f" , model.bid!)
+            cell.stockListCellOfferLabel.text = String(format: "%0.2f" , model.offer!)
+            
+            if ((row % 2) != 0) {
                 cell.contentView.backgroundColor = .lightGray
             } else {
                 cell.contentView.backgroundColor = .white
             }
-            let urlString = model.poster!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            cell.movieListCellImageView.kf.setImage(with: URL(string: urlString!))
-            cell.movieListCellNameLabel.text = model.title
-            cell.movieListCellYearLabel.text = model.year
-            
-            cell.movieListCellAddFavoriteButton.addTapGesture(){
-    
-                let favoriteList = RealmHelper.sharedInstance.fetchFavoriteList().map { $0 }
-                if let position = favoriteList.firstIndex(where: {$0.imdbID == model.imdbID}){
-                    RealmHelper.sharedInstance.deleteFromDb(movie: favoriteList[position])
-                    AppSnackBar.make(in: self.view, message: "\(model.title!) remove to favorites ", duration: .custom(1.0)).show()
-                    cell.movieListCellAddFavoriteButton.backgroundColor = .clear
-                }else{
-                    RealmHelper.sharedInstance.addMovieToFavorites(movie: model)
-                    AppSnackBar.make(in: self.view, message: "\(model.title!) add to favorites", duration: .custom(1.0)).show()
-                    cell.movieListCellAddFavoriteButton.backgroundColor = .red
-                }
-
-            }
-            self.favoriMovieStatus(cell: cell, model: model)
         }.disposed(by: disposeBag)
         
         
-
-        movieListView.movieListCollectionView.rx.modelSelected(Movie.self).bind(to: viewModel.input.selectedMovie).disposed(by: disposeBag)
-
+        
+       // stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
+        
     }
-     
- 
-    func registerTableView() {
+    
+    
+    func registerTableViewCell() {
         stockListView.stockListTableView.delegate = self
-        stockListView.stockListTableView.register(StockListCell.self, forCellWithReuseIdentifier: "StockListCell")
-
+        stockListView.stockListTableView.register(StockListCell.self, forCellReuseIdentifier: cellIdentifier)
+        stockListView.stockListTableView.sectionHeaderHeight = 20
+     
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-         let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 90))
-         let headerCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-         headerCell?.frame = headerView.bounds
-         headerView.addSubview(headerCell!)
-         return headerView
-     }
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        headerCell?.contentView.backgroundColor = .darkGray
+        return headerCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
 }

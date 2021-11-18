@@ -12,54 +12,52 @@ import XCoordinator
 import Action
 
 class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, StockListViewModelOutput , StockListViewModelStoredProperties {
-    var selectedStock: AnyObserver<Stocks>
+
     
-   
-    
-   
+
 
     let disposeBag = DisposeBag()
     
-    // MARK: -Inputs-
+    // MARK: -Inputs
     
-    private(set) lazy var selectedStock = selectedStockActions.inputs
+
     
     // MARK: -Actions-
-    lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock  in
-       //self.router.rx.trigger(.movieDetail(omdbId: movie.imdbID!))
-    }
+
     
     // MARK: -Outputs-
     
     var stockListResponse = PublishSubject<StockListResponse>()
    
     var stockList = PublishSubject<[Stocks]>()
-   
-    internal let stockListUseCase: StockListUseCase
-    
+
     // MARK: -Stored properties-
     
     private let router: UnownedRouter<StockListRoute>
-    internal let movieListUseCase = StockListUseCase()
+     var stockListUseCase = StockListUseCase()
+     var handshakeResponse : HandshakeResponse
     
     // MARK: -Initialization-
     
-    init(router: UnownedRouter<StockListRoute>) {
+    init(router: UnownedRouter<StockListRoute>, handshakeResponse : HandshakeResponse ) {
         self.router = router
+        self.handshakeResponse = handshakeResponse
+        UserDefaults.standard.set(handshakeResponse.authorization, forKey: "Authorization")
+        fetchStockList(handshakeResponse: handshakeResponse)
     }
-
-    func fetchStockList(searchText: String , page: Int ) {
-    //    var params: [String: Any] = [String: Any]()
-    //    params["page"] = page
-    //    params["s"] = searchText
-    //    params["type"] = "movie"
-    //    movieListUseCase.getMovieList(params: params).subscribe(onNext: { response in
-    //        if response.movies != nil {
-    //            self.movieListResponse.onNext(response)
-    //        } else {
-    //            self.errorMessage.onNext("There is no such movie")
-    //        }
-    //    }).disposed(by: disposeBag)
+    
+    
+    func fetchStockList(handshakeResponse: HandshakeResponse) {
+        var params: [String: Any] = [String: Any]()
+        params["period"] = handshakeResponse.getPeriodParameter(periodTag: "all")
+        
+        stockListUseCase.stockList(params: params).subscribe(onNext: { response in
+            if (response.status?.isSuccess)! {
+                self.stockList.onNext(response.stocks!)
+            } else {
+                print(response.status?.error?.message)
+            }
+        }).disposed(by: disposeBag)
     }
    
 }

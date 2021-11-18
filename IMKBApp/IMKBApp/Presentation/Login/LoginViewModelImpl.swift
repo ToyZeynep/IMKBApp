@@ -17,6 +17,11 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
     // MARK: -Inputs-
     
     // MARK: -Outputs-
+    var handshakeResponse = PublishSubject<HandshakeResponse>()
+    var aesKey =  BehaviorSubject<String> (value: "")
+    var aesIV =  BehaviorSubject<String> (value: "")
+    var authorization =  BehaviorSubject<String> (value: "")
+    var lifeTime =  BehaviorSubject<String> (value: "")
     
     // MARK: -Stored properties-
     
@@ -28,7 +33,6 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
         
-        getAuth()
     }
    
     func getAuth(){
@@ -45,7 +49,7 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
         
         tokenUseCase.getToken(params: params).subscribe(onNext : {response in
             if  response.status?.isSuccess != false {
-                self.router.trigger(.stockList)
+                self.router.trigger(.stockList(hanshakeRespose: response))
             }
             
             

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CryptoSwift
+
 struct Stocks : Codable {
     let id : Int?
     let isDown : Bool?
@@ -43,4 +45,13 @@ struct Stocks : Codable {
         symbol = try values.decodeIfPresent(String.self, forKey: .symbol)
     }
 
+    func getSymbol(aesKey: String, aesIV: String) -> String {
+        let intKey = [UInt8](base64: aesKey)
+        let intIV = [UInt8](base64: aesIV)
+        let intSymbol = [UInt8](base64: symbol!)
+        let aes = try? AES(key: intKey, blockMode: CBC(iv: intIV), padding: .pkcs7)
+        let text = try? aes?.decrypt(intSymbol)
+        let str = String(bytes: text!, encoding: String.Encoding.utf8)
+        return str!
+    }
 }

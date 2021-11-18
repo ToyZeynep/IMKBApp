@@ -75,7 +75,7 @@ class StockListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-       
+        setStockListContentView()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -55,6 +55,10 @@ enum StocksEndPoint: APIConfiguration {
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
         
+        let token = UserDefaults.standard.string(forKey: "Authorization")
+        urlRequest.setValue(HTTPHeaderFieldValue.json.rawValue, forHTTPHeaderField: HTTPHeaderFieldKey.contentType.rawValue)
+        urlRequest.setValue(token ?? "", forHTTPHeaderField: HTTPHeaderFieldKey.XVPAuthorization.rawValue)
+
         
         // Parameters
         let encoding: ParameterEncoding = {
@@ -67,7 +71,5 @@ enum StocksEndPoint: APIConfiguration {
         }()
         print(urlRequest)
         return try encoding.encode(urlRequest, with: parameters)
-        print(urlRequest)
-        
     }
 }

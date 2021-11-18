@@ -40,8 +40,5 @@ class LoginViewController: UIViewController,BindableType {
         loginView.loginStartButton.rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
             self.viewModel.getAuth()
         }).disposed(by: disposeBag)
-        
-    
-    
      }
 }
