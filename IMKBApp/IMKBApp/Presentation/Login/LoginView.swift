@@ -24,7 +24,7 @@ class LoginView: UIView {
     lazy var loginImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "veripark")
+        imageView.image = UIImage(named: "loginLogo")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red

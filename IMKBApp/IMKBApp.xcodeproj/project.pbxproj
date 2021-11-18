@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1C367524E3E1BD5252BEA498 /* Pods_IMKBApp_IMKBAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD16EF944B6D8151DF31C1C /* Pods_IMKBApp_IMKBAppUITests.framework */; };
+		222E120B27467BF8007AE59E /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E120A27467BF8007AE59E /* LeftMenuView.swift */; };
+		222E120D27467C09007AE59E /* LeftMenuViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E120C27467C09007AE59E /* LeftMenuViewExt.swift */; };
+		222E120F27467C1D007AE59E /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E120E27467C1D007AE59E /* LeftMenuViewController.swift */; };
+		222E121127467C36007AE59E /* LeftMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E121027467C36007AE59E /* LeftMenuViewModel.swift */; };
+		222E121327467C56007AE59E /* LeftMenuViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E121227467C56007AE59E /* LeftMenuViewModelImpl.swift */; };
 		2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5A27438190008CC886 /* AppDelegate.swift */; };
 		2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5C27438190008CC886 /* SceneDelegate.swift */; };
 		2252FC6427438191008CC886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6327438191008CC886 /* Assets.xcassets */; };
@@ -69,6 +74,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222E120A27467BF8007AE59E /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		222E120C27467C09007AE59E /* LeftMenuViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewExt.swift; sourceTree = "<group>"; };
+		222E120E27467C1D007AE59E /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		222E121027467C36007AE59E /* LeftMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewModel.swift; sourceTree = "<group>"; };
+		222E121227467C56007AE59E /* LeftMenuViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewModelImpl.swift; sourceTree = "<group>"; };
 		2252FC5727438190008CC886 /* IMKBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC5A27438190008CC886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2252FC5C27438190008CC886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222E120927467A28007AE59E /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				222E120A27467BF8007AE59E /* LeftMenuView.swift */,
+				222E120C27467C09007AE59E /* LeftMenuViewExt.swift */,
+				222E120E27467C1D007AE59E /* LeftMenuViewController.swift */,
+				222E121027467C36007AE59E /* LeftMenuViewModel.swift */,
+				222E121227467C56007AE59E /* LeftMenuViewModelImpl.swift */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
 		2252FC4E27438190008CC886 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +292,7 @@
 		2252FCAC2743C836008CC886 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				222E120927467A28007AE59E /* LeftMenu */,
 				2252FCC4274418ED008CC886 /* StockList */,
 				2252FCAD2743C849008CC886 /* Login */,
 			);
@@ -586,7 +609,9 @@
 				22FC5D132745026000D7DD07 /* StockListCoordinator.swift in Sources */,
 				2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */,
 				2252FCCA2744197B008CC886 /* StockListViewController.swift in Sources */,
+				222E121327467C56007AE59E /* LeftMenuViewModelImpl.swift in Sources */,
 				2252FCC32743F743008CC886 /* AppCoordinator.swift in Sources */,
+				222E120D27467C09007AE59E /* LeftMenuViewExt.swift in Sources */,
 				2252FCB12743C89E008CC886 /* LoginViewExt.swift in Sources */,
 				2252FC9527439450008CC886 /* StocksEndPoint.swift in Sources */,
 				2252FCBA2743CA8F008CC886 /* ViewExt.swift in Sources */,
@@ -594,6 +619,7 @@
 				2252FCB32743C8B1008CC886 /* LoginViewController.swift in Sources */,
 				2252FCD227441A1B008CC886 /* StockListCellExt.swift in Sources */,
 				2252FCA52743BC85008CC886 /* Error.swift in Sources */,
+				222E120B27467BF8007AE59E /* LeftMenuView.swift in Sources */,
 				2252FCA92743C287008CC886 /* Stocks.swift in Sources */,
 				2252FC9127439407008CC886 /* ApiClient.swift in Sources */,
 				2252FCB52743C8BE008CC886 /* LoginViewModel.swift in Sources */,
@@ -604,6 +630,7 @@
 				2252FC9D2743A9B2008CC886 /* TokenUseCase.swift in Sources */,
 				22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */,
 				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
+				222E121127467C36007AE59E /* LeftMenuViewModel.swift in Sources */,
 				2252FCA12743BBE5008CC886 /* StockDetailsResponse.swift in Sources */,
 				2252FCCE274419AD008CC886 /* StockListViewModelImpl.swift in Sources */,
 				2252FCCC27441993008CC886 /* StockListViewModel.swift in Sources */,
@@ -616,6 +643,7 @@
 				2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */,
 				2252FCC827441955008CC886 /* StockListViewExt.swift in Sources */,
 				2252FC9B2743A9A4008CC886 /* StcokDetailsUseCase.swift in Sources */,
+				222E120F27467C1D007AE59E /* LeftMenuViewController.swift in Sources */,
 				2252FC9F2743BBCB008CC886 /* StockListResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
