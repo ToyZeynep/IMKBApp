@@ -18,8 +18,7 @@ protocol LeftMenuViewModelOutput {
 }
 
 protocol LeftMenuViewModelStoredProperties {
-    var leftMenuUseCase : StockListUseCase { get }
-    var handshakeResponse : HandshakeResponse { get }
+   
     
 }
 protocol LeftMenuViewModel{

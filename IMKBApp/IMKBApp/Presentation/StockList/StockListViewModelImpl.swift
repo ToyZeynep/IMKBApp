@@ -59,11 +59,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     }
     
     
-    
-    
-    func filterBySymbol(symbol : String) -> {
-        
-        stockList.
-   
-}
+    func toLeftMenu(){
+        router.trigger(.leftMenu)
+    }
 }

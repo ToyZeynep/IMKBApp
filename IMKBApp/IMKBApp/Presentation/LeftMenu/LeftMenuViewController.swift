@@ -15,7 +15,7 @@ import Kingfisher
 import Action
 
 
-class LeftMenuViewController: UIViewController, BindableType, UITableViewDelegate, UITextFieldDelegate {
+class LeftMenuViewController: UIViewController, BindableType {
  
     
 

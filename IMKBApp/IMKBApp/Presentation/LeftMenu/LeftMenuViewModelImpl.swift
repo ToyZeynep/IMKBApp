@@ -27,8 +27,6 @@ class LeftMenuViewModelImpl: LeftMenuViewModel, LeftMenuViewModelInput, LeftMenu
     // MARK: -Stored properties-
     
     private let router: UnownedRouter<StockListRoute>
-     var leftMenuUseCase = StockListUseCase()
-     var handshakeResponse : HandshakeResponse
    
     
     // MARK: -Initialization-

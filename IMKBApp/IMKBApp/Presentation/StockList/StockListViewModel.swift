@@ -30,7 +30,7 @@ protocol StockListViewModel{
     var input: StockListViewModelInput { get }
     var output: StockListViewModelOutput { get }
     var storedProperties : StockListViewModelStoredProperties { get }
-    
+    func toLeftMenu()
 }
 
 extension StockListViewModel where Self:  StockListViewModelInput & StockListViewModelOutput & StockListViewModelStoredProperties {

@@ -108,7 +108,7 @@ class StockListCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "upDown")
         imageView.backgroundColor = .clear
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
         return imageView
     }()

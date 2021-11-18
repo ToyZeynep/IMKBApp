@@ -91,7 +91,9 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
             }
         }.disposed(by: disposeBag)
         
-        
+        stockListView.stockListLeftMenuButton.rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
+            self.viewModel.toLeftMenu()
+        }).disposed(by: disposeBag)
         
        // stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
         
