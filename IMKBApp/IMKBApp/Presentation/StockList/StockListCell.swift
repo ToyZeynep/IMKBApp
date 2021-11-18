@@ -102,24 +102,16 @@ class StockListCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
-    lazy var stockListCellVariationLabel : UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Değişim"
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "up")
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let myString = NSMutableAttributedString(string: "Değişim")
-        myString.append(attachmentString)
-        label.attributedText = myString
-        return label
-    } ()
     
+    lazy var stockListCellVariationImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "upDown")
+        imageView.backgroundColor = .clear
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
 
     
     lazy var width: NSLayoutConstraint = {

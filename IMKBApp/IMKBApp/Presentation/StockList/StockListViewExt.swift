@@ -28,9 +28,9 @@ extension StockListView {
     }
     func setStockListToolBarView(){
         stockListContentView.addSubview(stockListToolBarView)
-        stockListToolBarView.setTop(equalTo: stockListContentView.topAnchor, constant: 20)
-        stockListToolBarView.setRight(equalTo: stockListContentView.rightAnchor, constant: -10)
-        stockListToolBarView.setLeft(equalTo: stockListContentView.leftAnchor, constant: 10)
+        stockListToolBarView.setTop(equalTo: stockListContentView.topAnchor, constant: 0)
+        stockListToolBarView.setRight(equalTo: stockListContentView.rightAnchor, constant: 0)
+        stockListToolBarView.setLeft(equalTo: stockListContentView.leftAnchor, constant: 0)
         stockListToolBarView.setHeight(height: 50)
         setStockListLeftMenuButton()
         setStockListTopLabel()
@@ -46,7 +46,7 @@ extension StockListView {
         stockListToolBarView.addSubview(stockListTopLabel)
         stockListTopLabel.setTop(equalTo: stockListToolBarView.topAnchor, constant: 5)
         stockListTopLabel.setLeft(equalTo: stockListLeftMenuButton.rightAnchor, constant: 10)
-        stockListTopLabel.setRight(equalTo: stockListToolBarView.rightAnchor, constant: -5)
+       // stockListTopLabel.setRight(equalTo: stockListToolBarView.rightAnchor, constant: -5)
         stockListTopLabel.setBottom(equalTo: stockListToolBarView.bottomAnchor, constant: -5)
        
     }
@@ -62,7 +62,7 @@ extension StockListView {
     
     func setstockListTableView(){
         stockListContentView.addSubview(stockListTableView)
-        stockListTableView.setTop(equalTo: stockListSearchTextField.bottomAnchor , constant: 5)
+        stockListTableView.setTop(equalTo: stockListSearchTextField.bottomAnchor )
         stockListTableView.setRight(equalTo: stockListContentView.rightAnchor)
         stockListTableView.setLeft(equalTo: stockListContentView.leftAnchor)
         stockListTableView.setBottom(equalTo: stockListContentView.bottomAnchor)

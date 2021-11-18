@@ -37,10 +37,10 @@ extension LoginView {
     
     func setLoginStartButton(){
         loginContentView.addSubview(loginStartButton)
-        loginStartButton.setRight(equalTo: loginContentView.rightAnchor, constant: -20)
-        loginStartButton.setLeft(equalTo: loginContentView.leftAnchor, constant: 20)
+        loginStartButton.setRight(equalTo: loginContentView.rightAnchor, constant: -40)
+        loginStartButton.setLeft(equalTo: loginContentView.leftAnchor, constant: 40)
         loginStartButton.setTop(equalTo: loginImageView.bottomAnchor, constant: 40)
-        loginStartButton.setBottom(equalTo: loginContentView.bottomAnchor, constant: -120)
+        loginStartButton.setHeight(height: 40)
     }
 
 }

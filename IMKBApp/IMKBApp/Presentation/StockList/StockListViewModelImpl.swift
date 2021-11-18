@@ -18,13 +18,10 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
 
     let disposeBag = DisposeBag()
     
-    // MARK: -Inputs
-    
+    // MARK: -Inputs-
 
-    
     // MARK: -Actions-
 
-    
     // MARK: -Outputs-
     
     var stockListResponse = PublishSubject<StockListResponse>()
@@ -36,6 +33,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     private let router: UnownedRouter<StockListRoute>
      var stockListUseCase = StockListUseCase()
      var handshakeResponse : HandshakeResponse
+   
     
     // MARK: -Initialization-
     
@@ -43,11 +41,11 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
         self.router = router
         self.handshakeResponse = handshakeResponse
         UserDefaults.standard.set(handshakeResponse.authorization, forKey: "Authorization")
-        fetchStockList(handshakeResponse: handshakeResponse)
+        self.fetchStockList(handshakeResponse: handshakeResponse, periodTag: "all")
     }
     
     
-    func fetchStockList(handshakeResponse: HandshakeResponse) {
+    func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String ) {
         var params: [String: Any] = [String: Any]()
         params["period"] = handshakeResponse.getPeriodParameter(periodTag: "all")
         
@@ -59,5 +57,13 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
             }
         }).disposed(by: disposeBag)
     }
+    
+    
+    
+    
+    func filterBySymbol(symbol : String) -> {
+        
+        stockList.
    
+}
 }

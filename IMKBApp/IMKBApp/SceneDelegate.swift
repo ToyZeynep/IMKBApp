@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

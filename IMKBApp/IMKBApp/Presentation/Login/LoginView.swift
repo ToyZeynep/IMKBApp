@@ -14,8 +14,7 @@ class LoginView: UIView {
     lazy var loginContentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        view.backgroundColor = .white
         view.layer.masksToBounds = true
         view.layer.shouldRasterize = true
         return view
@@ -25,7 +24,7 @@ class LoginView: UIView {
     lazy var loginImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "logo1.png")
+        imageView.image = UIImage(named: "veripark")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = .red
@@ -34,9 +33,11 @@ class LoginView: UIView {
     
     lazy var loginStartButton : UIButton = {
         var button = UIButton()
-        button.setImage(UIImage(named: "favorite")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.backgroundColor = .red
-        button.tintColor = .black
+        button.setTitle("IMKB Hisse Senetleri / Endeksler", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(rgb: 0xF5F5F5)
+        button.titleLabel?.font = .preferredFont(forTextStyle: .body, compatibleWith: .none)
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.imageEdgeInsets = EdgeInsets(top: 3, left: 3, bottom: 3 , right: 3)
         return button

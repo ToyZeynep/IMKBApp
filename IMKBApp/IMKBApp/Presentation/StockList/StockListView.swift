@@ -21,14 +21,14 @@ class StockListView: UIView {
     
     lazy var stockListToolBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(rgb: 0xF3F3F3)
+        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var stockListLeftMenuButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "filter.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage(named: "leftMenu")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
        // button.imageEdgeInsets = EdgeInsets(top: 5 , left: 5, bottom: 5, right: 5)
@@ -39,6 +39,7 @@ class StockListView: UIView {
     lazy var stockListTopLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.text = "IMKB Hisse Ve Endeksler"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false

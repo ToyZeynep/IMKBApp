@@ -64,18 +64,19 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         }).disposed(by:disposeBag)
         
         viewModel.output.stockList.bind(to: stockListView.stockListTableView.rx.items(cellIdentifier:cellIdentifier , cellType: StockListCell.self)){[self] row, model, cell in
-            let up = "up"
-            let image1 = UIImage(named: up)
-            let down = "down"
-            let image2 = UIImage(named: down)
+           
+            let image1 =  UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
+            let image2 =  UIImage(named: "down")?.withRenderingMode(.alwaysTemplate)
             var image = UIImage()
             if model.isDown == true {
                 image = image2!
+                cell.stockListCellVariationImageView.tintColor = .red
             } else{
                 image = image1!
+                cell.stockListCellVariationImageView.tintColor = .green
             }
             
-         //   cell.stockListCellVariationLabel.image = image
+            cell.stockListCellVariationImageView.image = image
             cell.stockListCellSymbolLabel.text =  model.getSymbol(aesKey: self.viewModel.storedProperties.handshakeResponse.aesKey!, aesIV: self.viewModel.storedProperties.handshakeResponse.aesIV!)
             cell.stockListCellPriceLabel.text = String(format: "%0.2f" , model.price!)
             cell.stockListCellDifferenceLabel.text = String(format: "%0.2f" , model.difference!)
@@ -106,7 +107,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        headerCell?.contentView.backgroundColor = .darkGray
+        headerCell?.contentView.backgroundColor = UIColor(rgb: 0x43434d)
         return headerCell
     }
     
