@@ -22,20 +22,19 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Sembol"
+        label.text = "Sembol: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
     
     lazy var stockDetailsPriceLabel : UILabel = {
         let label = UILabel()
-        label.backgroundColor = .black
         label.textColor = UIColor.black
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Fiyat"
+        label.text = "Fiyat: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -45,9 +44,9 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "% Fark"
+        label.text = "% Fark: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -56,9 +55,9 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Hacim"
+        label.text = "Hacim: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -90,7 +89,7 @@ class StockDetailsView: UIView {
         label.textAlignment = .center
         label.text = "Günlük Düşük "
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -100,7 +99,7 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.text = "Günlük Yüksek"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -110,7 +109,7 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.text = "Adet"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -120,7 +119,7 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.text = "Taban"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -130,7 +129,7 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.text = "Tavan"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -140,14 +139,13 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.text = "Değişim"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     lazy var stockDetailsGraphicToolBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

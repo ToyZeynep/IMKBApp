@@ -36,7 +36,7 @@ func bindViewModel() {
 
     
     viewModel.output.symbol.bind(to: stockDetailsView.stockDetailsSymbolLabel.rx.text).disposed(by: disposeBag)
- /* viewModel.output.price.bind(to: stockDetailsView.stockDetailsPriceLabel.rx.text).disposed(by: disposeBag)
+    viewModel.output.price.bind(to: stockDetailsView.stockDetailsPriceLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.difference.bind(to: stockDetailsView.stockDetailsDifferenceLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.volume.bind(to: stockDetailsView.stockDetailsVolumeLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.bid.bind(to: stockDetailsView.stockDetailsBidLabel.rx.text).disposed(by: disposeBag)
@@ -45,7 +45,7 @@ func bindViewModel() {
     viewModel.output.lowest.bind(to: stockDetailsView.stockDetailsLowestLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.maximum.bind(to: stockDetailsView.stockDetailsMaximumLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.minimum.bind(to: stockDetailsView.stockDetailsMinimumLabel.rx.text).disposed(by: disposeBag)
-    viewModel.output.count.bind(to: stockDetailsView.stockDetailsCountLabel.rx.text).disposed(by: disposeBag) */
+    viewModel.output.count.bind(to: stockDetailsView.stockDetailsCountLabel.rx.text).disposed(by: disposeBag)
    }
     
     

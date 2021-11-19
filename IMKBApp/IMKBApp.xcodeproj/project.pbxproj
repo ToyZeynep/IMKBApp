@@ -18,6 +18,9 @@
 		224FD255274786F500AAA4E9 /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD254274786F500AAA4E9 /* StockDetailsViewController.swift */; };
 		224FD2572747870800AAA4E9 /* StockDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD2562747870800AAA4E9 /* StockDetailsViewModel.swift */; };
 		224FD2592747872600AAA4E9 /* StockDetailsViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD2582747872600AAA4E9 /* StockDetailsViewModelImpl.swift */; };
+		224FD25C274807DF00AAA4E9 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25B274807DF00AAA4E9 /* DoubleExt.swift */; };
+		224FD25E274809A900AAA4E9 /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25D274809A900AAA4E9 /* IntExt.swift */; };
+		224FD26027480CAE00AAA4E9 /* PeriodTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */; };
 		2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5A27438190008CC886 /* AppDelegate.swift */; };
 		2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5C27438190008CC886 /* SceneDelegate.swift */; };
 		2252FC6427438191008CC886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6327438191008CC886 /* Assets.xcassets */; };
@@ -89,6 +92,9 @@
 		224FD254274786F500AAA4E9 /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
 		224FD2562747870800AAA4E9 /* StockDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewModel.swift; sourceTree = "<group>"; };
 		224FD2582747872600AAA4E9 /* StockDetailsViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewModelImpl.swift; sourceTree = "<group>"; };
+		224FD25B274807DF00AAA4E9 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
+		224FD25D274809A900AAA4E9 /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
+		224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodTag.swift; sourceTree = "<group>"; };
 		2252FC5727438190008CC886 /* IMKBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC5A27438190008CC886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2252FC5C27438190008CC886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -341,6 +347,9 @@
 				2252FCBB2743D045008CC886 /* BindableType.swift */,
 				2252FCBD2743D566008CC886 /* UIDeviceExt.swift */,
 				2252FCBF2743ECFF008CC886 /* TransitionExt.swift */,
+				224FD25B274807DF00AAA4E9 /* DoubleExt.swift */,
+				224FD25D274809A900AAA4E9 /* IntExt.swift */,
+				224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -653,6 +662,7 @@
 				2252FCBC2743D045008CC886 /* BindableType.swift in Sources */,
 				2252FC9D2743A9B2008CC886 /* TokenUseCase.swift in Sources */,
 				22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */,
+				224FD26027480CAE00AAA4E9 /* PeriodTag.swift in Sources */,
 				224FD255274786F500AAA4E9 /* StockDetailsViewController.swift in Sources */,
 				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
 				222E121127467C36007AE59E /* LeftMenuViewModel.swift in Sources */,
@@ -666,7 +676,9 @@
 				2252FC992743A987008CC886 /* StockListUseCase.swift in Sources */,
 				2252FCA72743BCA7008CC886 /* Status.swift in Sources */,
 				224FD251274786CB00AAA4E9 /* StockDetailsView.swift in Sources */,
+				224FD25C274807DF00AAA4E9 /* DoubleExt.swift in Sources */,
 				224FD2592747872600AAA4E9 /* StockDetailsViewModelImpl.swift in Sources */,
+				224FD25E274809A900AAA4E9 /* IntExt.swift in Sources */,
 				2252FCA32743BC0F008CC886 /* HandshakeResponse.swift in Sources */,
 				2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */,
 				2252FCC827441955008CC886 /* StockListViewExt.swift in Sources */,

@@ -12,11 +12,6 @@ import XCoordinator
 import Action
 
 class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, StockListViewModelOutput , StockListViewModelStoredProperties {
-   
-    
-
-    
-
 
     let disposeBag = DisposeBag()
     
@@ -26,7 +21,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
 
     // MARK: -Actions-
     lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock in
-        self.router.rx.trigger(.stockDetail(stockId: stock.id!))
+        self.router.rx.trigger(.stockDetail(stockId: stock.id!, handshakeRespose: handshakeResponse))
         }
     // MARK: -Outputs-
     
@@ -46,8 +41,9 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     init(router: UnownedRouter<StockListRoute>, handshakeResponse : HandshakeResponse ) {
         self.router = router
         self.handshakeResponse = handshakeResponse
+        
         UserDefaults.standard.set(handshakeResponse.authorization, forKey: "Authorization")
-        self.fetchStockList(handshakeResponse: handshakeResponse, periodTag: "all")
+        self.fetchStockList(handshakeResponse: handshakeResponse, periodTag: PeriodTag.all.rawValue)
     }
     
     

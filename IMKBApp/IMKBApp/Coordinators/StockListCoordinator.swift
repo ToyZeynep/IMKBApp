@@ -12,7 +12,7 @@ import XCoordinator
 
 enum StockListRoute: Route {
     case stockList(handshakeRespose : HandshakeResponse)
-    case stockDetail(stockId : Int)
+    case stockDetail(stockId : Int , handshakeRespose : HandshakeResponse)
     case leftMenu
 }
 
@@ -37,9 +37,9 @@ class StockListCoordinator: NavigationCoordinator<StockListRoute> {
             viewController.bind(to: viewModel)
             return .present(viewController, animation: .default)
             
-        case .stockDetail(let stockId):
+        case .stockDetail(let stockId , let handshakeResponse):
             let viewController = StockDetailsViewController()
-            let viewModel = StockDetailsViewModelImpl(router: unownedRouter, stockId: stockId)
+            let viewModel = StockDetailsViewModelImpl(router: unownedRouter, stockId: stockId, handshakeResponse: handshakeResponse)
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
      
