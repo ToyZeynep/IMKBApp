@@ -143,6 +143,15 @@ class StockDetailsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    lazy var stockDetailsVariationImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .green
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
 
     lazy var stockDetailsGraphicToolBarView: UIView = {
         let view = UIView()

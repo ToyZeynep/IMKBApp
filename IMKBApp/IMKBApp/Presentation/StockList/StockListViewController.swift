@@ -28,6 +28,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
     var stocks = [Stocks]()
     
     
+    
     override func loadView() {
         view = stockListView
     }
