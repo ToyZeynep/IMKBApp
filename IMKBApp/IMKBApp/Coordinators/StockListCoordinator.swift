@@ -13,11 +13,11 @@ import XCoordinator
 enum StockListRoute: Route {
     case stockList(handshakeRespose : HandshakeResponse)
     case stockDetail(stockId : Int , handshakeRespose : HandshakeResponse)
-    case leftMenu
+    case leftMenu(handshakeRespose: HandshakeResponse, PublishSubject<Void>)
 }
 
 class StockListCoordinator: NavigationCoordinator<StockListRoute> {
-    
+    let disposeBag = DisposeBag()
     init(handshakeResponse : HandshakeResponse) {
         super.init(initialRoute : .stockList(handshakeRespose: handshakeResponse))
     }
@@ -31,11 +31,12 @@ class StockListCoordinator: NavigationCoordinator<StockListRoute> {
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
 
-        case .leftMenu :
-            let viewController = LeftMenuViewController()
-            let viewModel = LeftMenuViewModelImpl(router: unownedRouter)
-            viewController.bind(to: viewModel)
-            return .present(viewController, animation: .default)
+        case .leftMenu (let handshakeResponse, let subject) :
+            let  coordinator = LeftMenuCoordinator(handshakeResponse: handshakeResponse)
+            coordinator.rootViewController.rx.dismissal
+                .bind(to: subject)
+                .disposed(by: disposeBag)
+            return .present(coordinator, animation: .default)
             
         case .stockDetail(let stockId , let handshakeResponse):
             let viewController = StockDetailsViewController()
@@ -46,3 +47,4 @@ class StockListCoordinator: NavigationCoordinator<StockListRoute> {
         }
     }
 }
+

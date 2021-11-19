@@ -17,12 +17,28 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     
     // MARK: -Inputs-
    private(set) lazy var selectedStock = selectedStockActions.inputs
-    
+   private(set) lazy var showLeftMenu = showLeftMenuCoordinator.inputs
 
     // MARK: -Actions-
     lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock in
         self.router.rx.trigger(.stockDetail(stockId: stock.id!, handshakeRespose: handshakeResponse))
         }
+    
+    
+    lazy var showLeftMenuCoordinator = Action<Bool, Void> { [unowned self] success in
+        let subject = PublishSubject<Void>()
+        subject
+            .subscribe(
+                onNext: {
+                    if UserDefaults.standard.string(forKey: "PeriodTag") != "" {
+                        let periodTag = UserDefaults.standard.string(forKey: "PeriodTag")
+                        fetchStockList(handshakeResponse: handshakeResponse, periodTag: periodTag!)
+                    }
+            })
+            .disposed(by: self.disposeBag)
+        return self.router.rx.trigger(.leftMenu(handshakeRespose: handshakeResponse, subject))
+    }
+    
     // MARK: -Outputs-
     
     var stockListResponse = PublishSubject<StockListResponse>()
@@ -62,6 +78,6 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     
     
     func toLeftMenu(){
-        router.trigger(.leftMenu)
+  //      router.trigger(.leftMenu(handshakeRespose: handshakeResponse))
     }
 }

@@ -13,6 +13,7 @@ import Action
 protocol StockListViewModelInput {
     
     var selectedStock: AnyObserver<Stocks> { get }
+    var showLeftMenu: AnyObserver<Bool> { get }
 }
 
 protocol StockListViewModelOutput {

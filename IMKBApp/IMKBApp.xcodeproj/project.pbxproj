@@ -21,6 +21,8 @@
 		224FD25C274807DF00AAA4E9 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25B274807DF00AAA4E9 /* DoubleExt.swift */; };
 		224FD25E274809A900AAA4E9 /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25D274809A900AAA4E9 /* IntExt.swift */; };
 		224FD26027480CAE00AAA4E9 /* PeriodTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */; };
+		224FD26227482AA400AAA4E9 /* LeftMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD26127482AA400AAA4E9 /* LeftMenuCoordinator.swift */; };
+		224FD26427482F6A00AAA4E9 /* PresentableRxExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FD26327482F6A00AAA4E9 /* PresentableRxExt.swift */; };
 		2252FC5B27438190008CC886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5A27438190008CC886 /* AppDelegate.swift */; };
 		2252FC5D27438190008CC886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FC5C27438190008CC886 /* SceneDelegate.swift */; };
 		2252FC6427438191008CC886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2252FC6327438191008CC886 /* Assets.xcassets */; };
@@ -95,6 +97,8 @@
 		224FD25B274807DF00AAA4E9 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		224FD25D274809A900AAA4E9 /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodTag.swift; sourceTree = "<group>"; };
+		224FD26127482AA400AAA4E9 /* LeftMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCoordinator.swift; sourceTree = "<group>"; };
+		224FD26327482F6A00AAA4E9 /* PresentableRxExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableRxExt.swift; sourceTree = "<group>"; };
 		2252FC5727438190008CC886 /* IMKBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2252FC5A27438190008CC886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2252FC5C27438190008CC886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 				224FD25B274807DF00AAA4E9 /* DoubleExt.swift */,
 				224FD25D274809A900AAA4E9 /* IntExt.swift */,
 				224FD25F27480CAE00AAA4E9 /* PeriodTag.swift */,
+				224FD26327482F6A00AAA4E9 /* PresentableRxExt.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 			children = (
 				2252FCC22743F743008CC886 /* AppCoordinator.swift */,
 				22FC5D122745026000D7DD07 /* StockListCoordinator.swift */,
+				224FD26127482AA400AAA4E9 /* LeftMenuCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -664,12 +670,14 @@
 				22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */,
 				224FD26027480CAE00AAA4E9 /* PeriodTag.swift in Sources */,
 				224FD255274786F500AAA4E9 /* StockDetailsViewController.swift in Sources */,
+				224FD26427482F6A00AAA4E9 /* PresentableRxExt.swift in Sources */,
 				2252FCC02743ECFF008CC886 /* TransitionExt.swift in Sources */,
 				222E121127467C36007AE59E /* LeftMenuViewModel.swift in Sources */,
 				2252FCA12743BBE5008CC886 /* StockDetailsResponse.swift in Sources */,
 				2252FCCE274419AD008CC886 /* StockListViewModelImpl.swift in Sources */,
 				224FD253274786E000AAA4E9 /* StockDetailsViewExt.swift in Sources */,
 				2252FCCC27441993008CC886 /* StockListViewModel.swift in Sources */,
+				224FD26227482AA400AAA4E9 /* LeftMenuCoordinator.swift in Sources */,
 				2252FC9727439477008CC886 /* HandshakeEndPoint.swift in Sources */,
 				2252FCAF2743C890008CC886 /* LoginView.swift in Sources */,
 				2252FCB72743C8D8008CC886 /* LoginViewModelImpl.swift in Sources */,

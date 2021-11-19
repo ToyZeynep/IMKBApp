@@ -15,16 +15,21 @@ protocol LeftMenuViewModelInput {
 }
 
 protocol LeftMenuViewModelOutput {
+    var stockListResponse: PublishSubject<StockListResponse> { get }
+    var stockList: PublishSubject<[Stocks]> { get }
 }
 
 protocol LeftMenuViewModelStoredProperties {
-   
-    
+    var stockListUseCase : StockListUseCase { get }
+    var handshakeResponse : HandshakeResponse { get }
 }
 protocol LeftMenuViewModel{
     var input: LeftMenuViewModelInput { get }
     var output: LeftMenuViewModelOutput { get }
     var storedProperties : LeftMenuViewModelStoredProperties { get }
+    
+    func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String )
+    func dismiss()
     
 }
 
