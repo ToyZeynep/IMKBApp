@@ -22,22 +22,20 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Sembol"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
     
     lazy var stockDetailsPriceLabel : UILabel = {
         let label = UILabel()
-        label.backgroundColor = .clear
+        label.backgroundColor = .black
         label.textColor = UIColor.black
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Fiyat"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -47,10 +45,9 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "% Fark"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -59,22 +56,19 @@ class StockDetailsView: UIView {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Hacim"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
     
     lazy var stockDetailsBidLabel : UILabel = {
         let label = UILabel()
-        label.backgroundColor = .clear
         label.textColor = UIColor.black
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Alış"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -87,7 +81,6 @@ class StockDetailsView: UIView {
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Satış"
-        label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
@@ -104,7 +97,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsMaximumLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Günlük Yüksek"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -114,7 +107,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsCountLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Adet"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -124,7 +117,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsLowestLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Taban"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -134,7 +127,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsHighestLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Tavan"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -144,7 +137,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsVariationLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Değişim"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -162,6 +155,7 @@ class StockDetailsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setStockDetailsContentView()
+        setGraphicToolbarView()
     }
     
     required init?(coder aDecoder: NSCoder) {
