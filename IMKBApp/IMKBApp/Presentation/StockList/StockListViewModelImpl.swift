@@ -12,6 +12,8 @@ import XCoordinator
 import Action
 
 class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, StockListViewModelOutput , StockListViewModelStoredProperties {
+   
+    
 
     
 
@@ -19,9 +21,13 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     let disposeBag = DisposeBag()
     
     // MARK: -Inputs-
+   private(set) lazy var selectedStock = selectedStockActions.inputs
+    
 
     // MARK: -Actions-
-
+    lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock in
+        self.router.rx.trigger(.stockDetail(stockId: stock.id!))
+        }
     // MARK: -Outputs-
     
     var stockListResponse = PublishSubject<StockListResponse>()

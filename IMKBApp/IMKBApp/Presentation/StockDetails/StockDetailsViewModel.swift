@@ -29,7 +29,6 @@ protocol StockDetailsViewModelOutput {
     var price : BehaviorSubject<Double> { get }
     var volume : BehaviorSubject<Double> { get }
     var symbol : BehaviorSubject<String> { get }
-    var status : BehaviorSubject<Status> { get }
  //   var graphicData : BehaviorSubject<[GraphicData]> { get }
 }
 

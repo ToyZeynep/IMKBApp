@@ -12,11 +12,7 @@ import XCoordinator
 import Action
 
 class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInput, StockDetailsViewModelOutput {
-    var status: BehaviorSubject<Status>
-    
-    var graphicData: BehaviorSubject<[GraphicData]>
-    
-    
+  
     
     var isDown = BehaviorSubject<Bool> (value: true)
     var isUp = BehaviorSubject<Bool>  (value: true)
@@ -50,31 +46,30 @@ class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInp
     // MARK: -Stored properties-
     
     private let router: UnownedRouter<StockListRoute>
-    private let stockDetails : StockDetailsResponse
+    private let stockId : Int
     
     // MARK: -Initialization-
     
-    init(router: UnownedRouter<StockListRoute> , stockDetails: StockDetailsResponse) {
+    init(router: UnownedRouter<StockListRoute> , stockId : Int) {
         self.router = router
-        self.stockDetails = stockDetails
+        self.stockId = stockId
     }
     
-    func setStockDetail() {
-        isDown.onNext(stockDetails.isDown!)
-        isUp.onNext(stockDetails.isUp!)
-        bid.onNext(stockDetails.bid!)
-        channge.onNext(stockDetails.channge!)
-        difference.onNext(stockDetails.difference!)
-        offer.onNext(stockDetails.offer!)
-        highest.onNext(stockDetails.highest!)
-        lowest.onNext(stockDetails.lowest!)
-        minimum.onNext(stockDetails.minimum!)
-        maximum.onNext(stockDetails.maximum!)
-        price.onNext(stockDetails.price!)
-        volume.onNext(stockDetails.volume!)
-        symbol.onNext(stockDetails.symbol!)
-        status.onNext(stockDetails.status!)
-    //    graphicData.onNext(stockDetails.graphicData!)
-        
-    }
+  //  func setStockDetail() {
+  //      isDown.onNext(stockDetails.isDown!)
+  //      isUp.onNext(stockDetails.isUp!)
+  //      bid.onNext(stockDetails.bid!)
+  //      channge.onNext(stockDetails.channge!)
+  //      difference.onNext(stockDetails.difference!)
+  //      offer.onNext(stockDetails.offer!)
+  //      highest.onNext(stockDetails.highest!)
+  //      lowest.onNext(stockDetails.lowest!)
+  //      minimum.onNext(stockDetails.minimum!)
+  //      maximum.onNext(stockDetails.maximum!)
+  //      price.onNext(stockDetails.price!)
+  //      volume.onNext(stockDetails.volume!)
+  //      symbol.onNext(stockDetails.symbol!)
+  //  //    graphicData.onNext(stockDetails.graphicData!)
+  //
+  //  }
 }

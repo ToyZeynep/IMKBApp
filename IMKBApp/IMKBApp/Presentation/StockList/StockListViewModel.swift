@@ -12,7 +12,7 @@ import Action
 
 protocol StockListViewModelInput {
     
-
+    var selectedStock: AnyObserver<Stocks> { get }
 }
 
 protocol StockListViewModelOutput {

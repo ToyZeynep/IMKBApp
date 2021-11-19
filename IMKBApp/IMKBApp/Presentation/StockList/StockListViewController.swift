@@ -113,7 +113,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
             self.viewModel.toLeftMenu()
         }).disposed(by: disposeBag)
         
-       // stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
+        stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
         
     }
     
