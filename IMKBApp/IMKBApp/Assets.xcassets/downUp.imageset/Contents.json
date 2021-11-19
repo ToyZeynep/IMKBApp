@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "down-invest-revenue-internet-svg-icon-arrow-up-arrow-down-icon-11553394002tufz1240wf.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

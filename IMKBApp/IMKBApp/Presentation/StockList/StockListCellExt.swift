@@ -72,9 +72,9 @@ extension StockListCell {
     func setStockListCellVariationImageView(){
         stockListCellContentView.addSubview(stockListCellVariationImageView)
         stockListCellVariationImageView.setLeft(equalTo: stockListCellOfferLabel.rightAnchor, constant: 10)
-        stockListCellVariationImageView.setRight(equalTo: stockListCellContentView.rightAnchor, constant: -10)
+        stockListCellVariationImageView.setRight(equalTo: stockListCellContentView.rightAnchor)
         stockListCellVariationImageView.setTop(equalTo: stockListCellContentView.topAnchor, constant: 10)
         stockListCellVariationImageView.setBottom(equalTo: stockListCellContentView.bottomAnchor, constant: -10)
-        stockListCellVariationImageView.setWidth(width: (UIScreen.main.bounds.width - 40) / 7)
+       // stockListCellVariationImageView.setWidth(width: (UIScreen.main.bounds.width - 40) / 7)
     }
 }

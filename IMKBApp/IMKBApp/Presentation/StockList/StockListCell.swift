@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxCocoa
 import RxSwift
+import Material
 class StockListCell: UITableViewCell {
     
     var disposeBag: DisposeBag = DisposeBag()

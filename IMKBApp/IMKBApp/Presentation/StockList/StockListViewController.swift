@@ -97,7 +97,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
             cell.stockListCellVariationImageView.image = image
             cell.stockListCellSymbolLabel.text =  model.getSymbol(aesKey: self.viewModel.storedProperties.handshakeResponse.aesKey!, aesIV: self.viewModel.storedProperties.handshakeResponse.aesIV!)
             cell.stockListCellPriceLabel.text = String(format: "%0.2f" , model.price!)
-            cell.stockListCellDifferenceLabel.text = String(format: "%0.2f" , model.difference!)
+            cell.stockListCellDifferenceLabel.text = String(format: "%0.2f" , abs(model.difference!))
             cell.stockListCellVolumeLabel.text = String(format: "%0.2f" , model.volume!)
             cell.stockListCellBidLabel.text = String(format: "%0.2f" , model.bid!)
             cell.stockListCellOfferLabel.text = String(format: "%0.2f" , model.offer!)

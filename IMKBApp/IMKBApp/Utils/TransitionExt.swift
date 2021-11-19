@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import XCoordinator
+import RxSwift
+import RxCocoa
 
 extension Transition {
 
@@ -33,6 +35,23 @@ extension Transition {
         Transition(presentables: [child], animationInUse: nil) { _, _, completion in
             completion?()
         }
+    }
+
+}
+
+extension Reactive where Base: Presentable {
+    
+    public var dismissal: Observable<Void>! {
+        guard let viewController = base.viewController else {
+            return nil
+        }
+        return viewController.rx
+            .methodInvoked(#selector(UIViewController.viewDidDisappear(_:)))
+            .map { _ in }
+            .filter { [weak viewController] in
+                guard let viewController = viewController else { return false }
+                return viewController.isBeingDismissed || viewController.isMovingFromParent
+            }
     }
 
 }
