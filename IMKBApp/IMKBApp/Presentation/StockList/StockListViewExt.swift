@@ -6,11 +6,7 @@
 //
 
 import Foundation
-import Foundation
-
 import UIKit
-import Foundation
-
 extension StockListView {
     func setStockListContentView()  {
         addSubview(stockListContentView)

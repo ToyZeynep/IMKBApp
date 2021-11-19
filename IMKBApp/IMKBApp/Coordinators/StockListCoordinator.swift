@@ -12,7 +12,7 @@ import XCoordinator
 
 enum StockListRoute: Route {
     case stockList(hanshakeRespose : HandshakeResponse)
-  //case stockDetail
+    case stockDetail
     case leftMenu
 }
 
