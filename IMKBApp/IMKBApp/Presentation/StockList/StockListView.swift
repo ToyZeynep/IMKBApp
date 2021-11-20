@@ -18,7 +18,6 @@ class StockListView: UIView {
         return view
     }()
     
-    
     lazy var stockListToolBarView: UIView = {
         let view = UIView()
         view.backgroundColor = .red
@@ -31,7 +30,6 @@ class StockListView: UIView {
         button.setImage(UIImage(named: "leftMenu")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-       // button.imageEdgeInsets = EdgeInsets(top: 5 , left: 5, bottom: 5, right: 5)
         button.clipsToBounds = true
         return button
     }()
@@ -46,7 +44,6 @@ class StockListView: UIView {
         return label
     }()
   
- 
     lazy var stockListSearchTextField : UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -61,12 +58,10 @@ class StockListView: UIView {
         textField.layer.cornerRadius = 10
         textField.clearButtonMode = UITextField.ViewMode.whileEditing
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        //textField.delegate = self
         return textField
     }()
     
     lazy var stockListTableView: UITableView = {
-
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear

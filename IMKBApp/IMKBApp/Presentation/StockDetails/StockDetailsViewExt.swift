@@ -13,8 +13,7 @@ extension StockDetailsView {
         addSubview(stockDetailsContentView)
         if #available(iOS 11.0, *) {
             stockDetailsContentView.setTop(equalTo: safeAreaLayoutGuide.topAnchor)
-        } else {
-        }
+        } 
         stockDetailsContentView.setLeft(equalTo: leftAnchor)
         stockDetailsContentView.setRight(equalTo: rightAnchor)
         

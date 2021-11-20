@@ -19,8 +19,7 @@ class LeftMenuView: UIView {
         view.layer.shouldRasterize = true
         return view
     }()
-    
-    
+        
     lazy var leftMenuToolBarView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +29,6 @@ class LeftMenuView: UIView {
         return view
     }()
     
-    
     lazy var leftMenuImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +37,7 @@ class LeftMenuView: UIView {
         imageView.layer.masksToBounds = true
         return imageView
     }()
+    
     lazy var leftMenuTitleLabel : UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -73,6 +72,7 @@ class LeftMenuView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
     lazy var leftMenuIncreasingButton: HighlightedButton = {
         let button = HighlightedButton(type: .custom)
         button.setTitle("Yükselenler", for: .normal)
@@ -82,6 +82,7 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
+    
     lazy var leftMenuDecreasingButton: HighlightedButton = {
         let button = HighlightedButton(type: .custom)
         button.setTitle("Düşenler", for: .normal)
@@ -91,6 +92,7 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
+    
     lazy var leftMenuVolume30Button: HighlightedButton = {
         let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 30", for: .normal)
@@ -100,6 +102,7 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
+    
     lazy var leftMenuVolume50Button: HighlightedButton = {
         let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 50", for: .normal)
@@ -109,6 +112,7 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
+    
     lazy var leftMenuVolume100Button: HighlightedButton = {
         let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 100", for: .normal)

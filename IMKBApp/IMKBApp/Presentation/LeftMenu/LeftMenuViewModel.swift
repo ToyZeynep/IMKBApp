@@ -6,12 +6,9 @@
 //
 import Foundation
 import RxSwift
-import XCoordinator
 import Action
 
 protocol LeftMenuViewModelInput {
-    
-
 }
 
 protocol LeftMenuViewModelOutput {
@@ -20,21 +17,19 @@ protocol LeftMenuViewModelOutput {
 }
 
 protocol LeftMenuViewModelStoredProperties {
-    var stockListUseCase : StockListUseCase { get }
-    var handshakeResponse : HandshakeResponse { get }
+    var stockListUseCase: StockListUseCase { get }
+    var handshakeResponse: HandshakeResponse { get }
 }
 protocol LeftMenuViewModel{
     var input: LeftMenuViewModelInput { get }
     var output: LeftMenuViewModelOutput { get }
-    var storedProperties : LeftMenuViewModelStoredProperties { get }
-    
-    func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String )
+    var storedProperties: LeftMenuViewModelStoredProperties { get }
+
     func dismiss()
-    
 }
 
 extension LeftMenuViewModel where Self:  LeftMenuViewModelInput & LeftMenuViewModelOutput & LeftMenuViewModelStoredProperties {
     var input: LeftMenuViewModelInput { return self }
     var output: LeftMenuViewModelOutput { return self }
-    var storedProperties : LeftMenuViewModelStoredProperties { return self  }
+    var storedProperties: LeftMenuViewModelStoredProperties { return self }
 }

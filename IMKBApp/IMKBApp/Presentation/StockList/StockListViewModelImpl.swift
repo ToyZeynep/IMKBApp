@@ -23,19 +23,18 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock in
         self.router.rx.trigger(.stockDetail(stockId: stock.id!, handshakeRespose: handshakeResponse))
         }
-    
-    
+        
     lazy var showLeftMenuCoordinator = Action<Bool, Void> { [unowned self] success in
         let subject = PublishSubject<Void>()
-        subject
-            .subscribe(
-                onNext: {
-                    if UserDefaults.standard.string(forKey: "PeriodTag") != "" {
-                        let periodTag = UserDefaults.standard.string(forKey: "PeriodTag")
-                        fetchStockList(handshakeResponse: handshakeResponse, periodTag: periodTag!)
-                    }
-            })
-            .disposed(by: self.disposeBag)
+        subject.subscribe(onNext: {
+            if UserDefaults.standard.string(forKey: "PeriodTag") != "" {
+                if UserDefaults.standard.string(forKey: "PeriodTag") != UserDefaults.standard.string(forKey: "LastPeriod") {
+                    let periodTag = UserDefaults.standard.string(forKey: "PeriodTag")
+                    UserDefaults.standard.set(periodTag, forKey: "LastPeriod")
+                    fetchStockList(handshakeResponse: handshakeResponse, periodTag: periodTag!)
+                }
+            }
+        }).disposed(by: self.disposeBag)
         return self.router.rx.trigger(.leftMenu(handshakeRespose: handshakeResponse, subject))
     }
     

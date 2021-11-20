@@ -12,16 +12,11 @@ import RxSwift
 import RxGesture
 import Action
 
-
 class LeftMenuViewController: UIViewController, BindableType {
-    
-    
-    
+      
     let disposeBag = DisposeBag()
     var leftMenuView = LeftMenuView()
     var viewModel: LeftMenuViewModel!
-    var isActive = true
-    
     
     override func loadView() {
         view = leftMenuView
@@ -46,9 +41,8 @@ class LeftMenuViewController: UIViewController, BindableType {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    
-    
     func bindViewModel() {
+        
         leftMenuView.leftMenuAllStocksButton.rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
             UserDefaults.standard.set(PeriodTag.all.rawValue, forKey: "PeriodTag")
                 self.viewModel.dismiss()
