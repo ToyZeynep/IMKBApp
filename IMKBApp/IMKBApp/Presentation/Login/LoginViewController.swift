@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import RxGesture
 import XCoordinator
-
+import iProgressHUD
 class LoginViewController: UIViewController,BindableType {
     
     private let disposeBag = DisposeBag()
@@ -31,6 +31,7 @@ class LoginViewController: UIViewController,BindableType {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        setUpProgressHud()
  
     }
     
@@ -39,9 +40,14 @@ class LoginViewController: UIViewController,BindableType {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    func setUpProgressHud(){
+        loginView.progressHud.attachProgress(toViews: view)
+    }
+    
     func bindViewModel() {
         loginView.loginStartButton.rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
             self.viewModel.getAuth()
+            self.view.showProgress()
         }).disposed(by: disposeBag)
-     }
+    }
 }

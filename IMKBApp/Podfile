@@ -19,6 +19,7 @@ target 'IMKBApp' do
   pod 'CryptoSwift', '~> 1.4.1'
   pod 'SwiftChart'
   pod 'Charts'
+  pod 'iProgressHUD', '~> 1.1.1'
 
   target 'IMKBAppTests' do
     inherit! :search_paths

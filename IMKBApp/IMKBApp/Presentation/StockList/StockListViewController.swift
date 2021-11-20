@@ -13,7 +13,7 @@ import RxGesture
 import XCoordinator
 import Kingfisher
 import Action
-
+import iProgressHUD
 
 class StockListViewController: UIViewController, BindableType, UITableViewDelegate, UITextFieldDelegate {
  
@@ -80,6 +80,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         
         viewModel.output.stockList.subscribe(onNext: { stockList in
             self.stockList = stockList
+            self.view.dismissProgress()
         }).disposed(by:disposeBag)
         
         viewModel.output.stockList.bind(to: stockListView.stockListTableView.rx.items(cellIdentifier:cellIdentifier , cellType: StockListCell.self)){[self] row, model, cell in

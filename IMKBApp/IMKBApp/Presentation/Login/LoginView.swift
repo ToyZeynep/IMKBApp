@@ -8,8 +8,25 @@
 import Foundation
 import UIKit
 import Material
+import iProgressHUD
 
 class LoginView: UIView {
+    
+    lazy var progressHud: iProgressHUD = {
+        let progressHud = iProgressHUD()
+        progressHud.iprogressStyle = .vertical
+        progressHud.indicatorStyle = .ballClipRotate
+        progressHud.isShowModal = true
+        progressHud.isShowCaption = false
+        progressHud.isTouchDismiss = false
+        progressHud.isBlurModal = true
+        progressHud.boxColor = .black
+        progressHud.indicatorColor = .white
+        progressHud.modalColor = .white
+        progressHud.alphaModal = 0.95
+        progressHud.boxSize = 40
+        return progressHud
+    }()
     
     lazy var loginContentView: UIView = {
         let view = UIView()
