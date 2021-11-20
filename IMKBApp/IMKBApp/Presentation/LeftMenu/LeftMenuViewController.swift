@@ -69,7 +69,7 @@ class LeftMenuViewController: UIViewController, BindableType {
         
         leftMenuView.leftMenuDecreasingButton .rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
             UserDefaults.standard.set(PeriodTag.decreasing.rawValue, forKey: "PeriodTag")
-            self.changeBackground(button: self.leftMenuView.leftMenuDecreasingButton)
+          //  self.changeBackground(button: self.leftMenuView.leftMenuDecreasingButton)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.viewModel.dismiss()
             }

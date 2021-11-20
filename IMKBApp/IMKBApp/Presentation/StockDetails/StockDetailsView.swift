@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Material
+import Charts
 
 class StockDetailsView: UIView {
     
@@ -38,7 +39,6 @@ class StockDetailsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
- 
     
     lazy var stockDetailsDifferenceLabel : UILabel = {
         let label = UILabel()
@@ -71,7 +71,6 @@ class StockDetailsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
- 
 
     lazy var stockDetailsOfferLabel : UILabel = {
         let label = UILabel()
@@ -143,6 +142,7 @@ class StockDetailsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     lazy var stockDetailsVariationImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -152,9 +152,15 @@ class StockDetailsView: UIView {
         imageView.layer.masksToBounds = true
         return imageView
     }()
-
+    
     lazy var stockDetailsGraphicToolBarView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var stockDetailsChartView: LineChartView = {
+        let view = LineChartView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

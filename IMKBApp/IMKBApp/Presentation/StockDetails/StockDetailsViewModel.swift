@@ -29,7 +29,7 @@ protocol StockDetailsViewModelOutput {
     var price : BehaviorSubject<String> { get }
     var volume : BehaviorSubject<String> { get }
     var symbol : BehaviorSubject<String> { get }
- //   var graphicData : BehaviorSubject<[GraphicData]> { get }
+    var graphicData : PublishSubject<[GraphicData]> { get }
 }
 
 protocol StockDetailsViewModelStoredProperties {

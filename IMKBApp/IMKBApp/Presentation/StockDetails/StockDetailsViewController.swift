@@ -13,6 +13,7 @@ import RxGesture
 import XCoordinator
 import Kingfisher
 import Action
+import Charts
 
 class StockDetailsViewController: UIViewController, BindableType {
     
@@ -20,7 +21,6 @@ class StockDetailsViewController: UIViewController, BindableType {
     var stockDetailsView = StockDetailsView()
     var viewModel: StockDetailsViewModel!
     var isDown : Bool?
-    
     
     override func loadView() {
         view = stockDetailsView
@@ -62,5 +62,57 @@ func bindViewModel() {
     viewModel.output.maximum.bind(to: stockDetailsView.stockDetailsMaximumLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.minimum.bind(to: stockDetailsView.stockDetailsMinimumLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.count.bind(to: stockDetailsView.stockDetailsCountLabel.rx.text).disposed(by: disposeBag)
+    
+    viewModel.output.graphicData.subscribe(onNext: { graphicData in
+        self.createChart(graphicData: graphicData, upperLimit: self.getUpperLimit(graphicData: graphicData))
+        
+    }).disposed(by: disposeBag)
+    
    }
+    
+    func createChart(graphicData: [GraphicData], upperLimit: Double) {
+        let data = LineChartData()
+        var lineChartEntry1 = [ChartDataEntry]()
+        var lineChartEntry2 = [ChartDataEntry]()
+        
+        for i in graphicData {
+            lineChartEntry1.append(ChartDataEntry(x: Double(i.day!), y: i.value!))
+        }
+        
+        for i in graphicData {
+            lineChartEntry2.append(ChartDataEntry(x: Double(i.day!), y: upperLimit))
+        }
+        
+        let line1 = LineChartDataSet(entries: lineChartEntry1, label: "Stock Graphic")
+        line1.fillColor = .red
+        line1.circleRadius = 5
+        line1.lineWidth = 3
+        line1.setColor(.black)
+        line1.lineDashLengths = [5]
+        line1.setCircleColors(.black)
+        line1.circleHoleColor = .black
+        line1.drawFilledEnabled = true
+        line1.drawCirclesEnabled = true
+        
+        let line2 = LineChartDataSet(entries: lineChartEntry2, label: "Upper Limit")
+        line2.valueTextColor = .clear
+        line2.lineWidth = 3
+        line2.lineDashLengths = [5]
+        line2.setColor(.red)
+        line2.drawFilledEnabled = false
+        line2.drawCirclesEnabled = false
+        data.addDataSet(line1)
+        data.addDataSet(line2)
+        self.stockDetailsView.stockDetailsChartView.data = data
+    }
+
+    func getUpperLimit(graphicData: [GraphicData]) -> Double{
+        var upperLimit = 0.0
+        for i in graphicData {
+            if upperLimit < i.value! {
+                upperLimit = i.value!
+            }
+        }
+        return upperLimit
+    }
 }

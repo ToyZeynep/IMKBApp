@@ -39,7 +39,7 @@ class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInp
     var price = BehaviorSubject<String>(value: "")
     var volume = BehaviorSubject<String>(value: "")
     var symbol = BehaviorSubject<String>(value: "")
-  //  var graphicData = BehaviorSubject<[GraphicData]> (value: )
+    var graphicData = PublishSubject<[GraphicData]>()
     
     // MARK: -Stored properties-
     var stockDetailsUseCase = StockDetailsUseCase()
@@ -81,6 +81,6 @@ class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInp
         price.onNext("Fiyat:  " + stockDetails.price!.toString())
         volume.onNext("Hacim:  " + stockDetails.volume!.toString())
         symbol.onNext("Sembol:  " + self.handshakeResponse.getSymbol(symbol: stockDetails.symbol!))
-        //    graphicData.onNext(stockDetails.graphicData!)
+        graphicData.onNext(stockDetails.graphicData!)
     }
 }

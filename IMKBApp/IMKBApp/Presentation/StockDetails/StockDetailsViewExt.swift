@@ -77,7 +77,7 @@ extension StockDetailsView {
         stockDetailsContentView.addSubview(stockDetailsMinimumLabel)
         stockDetailsMinimumLabel.setTop(equalTo: stockDetailsContentView.topAnchor, constant: 10)
         stockDetailsMinimumLabel.setRight(equalTo: stockDetailsContentView.rightAnchor)
-        stockDetailsMinimumLabel.setWidth(width: 165)
+        stockDetailsMinimumLabel.setWidth(width: 170)
     }
 
     func setStockDetailsMaximumLabel(){
@@ -134,9 +134,17 @@ extension StockDetailsView {
         stockDetailsGraphicToolBarView.setLeft(equalTo: leftAnchor)
         stockDetailsGraphicToolBarView.setRight(equalTo: rightAnchor)
         stockDetailsGraphicToolBarView.setBottom(equalTo: bottomAnchor)
+        
+        setStockDetailsChartView()
     }
 
-    
+    func setStockDetailsChartView() {
+        stockDetailsGraphicToolBarView.addSubview(stockDetailsChartView)
+        stockDetailsChartView.setTop(equalTo: stockDetailsGraphicToolBarView.topAnchor)
+        stockDetailsChartView.setLeft(equalTo: stockDetailsGraphicToolBarView.leftAnchor)
+        stockDetailsChartView.setRight(equalTo: stockDetailsGraphicToolBarView.rightAnchor)
+        stockDetailsChartView.setBottom(equalTo: stockDetailsGraphicToolBarView.bottomAnchor, constant: -20)
+    }
 
 
 
