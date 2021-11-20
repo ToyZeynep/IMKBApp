@@ -41,6 +41,7 @@ class StockListCoordinator: NavigationCoordinator<StockListRoute> {
         case .stockDetail(let stockId , let handshakeResponse):
             let viewController = StockDetailsViewController()
             let viewModel = StockDetailsViewModelImpl(router: unownedRouter, stockId: stockId, handshakeResponse: handshakeResponse)
+            viewController.title = "IMKB Hisse ve Endeksler"
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
      

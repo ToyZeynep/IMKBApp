@@ -29,7 +29,7 @@ class StockListView: UIView {
     lazy var stockListLeftMenuButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "leftMenu")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
        // button.imageEdgeInsets = EdgeInsets(top: 5 , left: 5, bottom: 5, right: 5)
         button.clipsToBounds = true
@@ -40,7 +40,7 @@ class StockListView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "IMKB Hisse Ve Endeksler"
-        label.textColor = .black
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -70,7 +70,7 @@ class StockListView: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
-    
+        tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
     

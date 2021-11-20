@@ -27,6 +27,7 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
         case .login :
             let viewController = LoginViewController()
             let viewModel = LoginViewModelImpl(router: unownedRouter)
+            viewController.title = "IMKB Hisse ve Endeksler"
             viewController.bind(to: viewModel)
             return .push(viewController, animation: .default)
 

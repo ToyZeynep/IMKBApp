@@ -40,7 +40,7 @@ extension LoginView {
         loginStartButton.setRight(equalTo: loginContentView.rightAnchor, constant: -40)
         loginStartButton.setLeft(equalTo: loginContentView.leftAnchor, constant: 40)
         loginStartButton.setTop(equalTo: loginImageView.bottomAnchor, constant: 40)
-        loginStartButton.setHeight(height: 40)
+        loginStartButton.setHeight(height: 50)
     }
 
 }

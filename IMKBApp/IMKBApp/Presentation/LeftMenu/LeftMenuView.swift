@@ -57,7 +57,7 @@ class LeftMenuView: UIView {
         label.backgroundColor = .clear
         label.textColor = UIColor.black
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.text = "IMKB Hisse Senetleri/Endeksler"
         label.numberOfLines = 1
         label.textColor = .red
@@ -65,16 +65,16 @@ class LeftMenuView: UIView {
         return label
     } ()
     
-    lazy var leftMenuAllStocksButton: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuAllStocksButton: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Hisse ve Endeksler", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    lazy var leftMenuIncreasingButton: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuIncreasingButton: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Yükselenler", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left
@@ -82,8 +82,8 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    lazy var leftMenuDecreasingButton: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuDecreasingButton: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Düşenler", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left
@@ -91,8 +91,8 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    lazy var leftMenuVolume30Button: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuVolume30Button: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 30", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left
@@ -100,8 +100,8 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    lazy var leftMenuVolume50Button: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuVolume50Button: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 50", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left
@@ -109,8 +109,8 @@ class LeftMenuView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    lazy var leftMenuVolume100Button: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var leftMenuVolume100Button: HighlightedButton = {
+        let button = HighlightedButton(type: .custom)
         button.setTitle("Hacme Göre - 100", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .left

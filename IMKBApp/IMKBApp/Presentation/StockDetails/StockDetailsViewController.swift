@@ -26,7 +26,9 @@ class StockDetailsViewController: UIViewController, BindableType {
         view = stockDetailsView
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.backgroundColor = .red
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     

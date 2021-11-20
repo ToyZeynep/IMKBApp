@@ -30,14 +30,26 @@ class LoginViewController: UIViewController,BindableType {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+      //  navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.navigationBar.backgroundColor = .red
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         setUpProgressHud()
  
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+        StatusBarStyle.changeBarColor()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+       // navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func setUpProgressHud(){
