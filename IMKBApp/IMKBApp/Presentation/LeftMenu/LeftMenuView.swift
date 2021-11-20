@@ -44,7 +44,7 @@ class LeftMenuView: UIView {
         label.backgroundColor = .clear
         label.textColor = UIColor.black
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "VERIPARK"
         label.numberOfLines = 1
         label.textColor = .red
@@ -57,7 +57,7 @@ class LeftMenuView: UIView {
         label.backgroundColor = .clear
         label.textColor = UIColor.black
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "IMKB Hisse Senetleri/Endeksler"
         label.numberOfLines = 1
         label.textColor = .red

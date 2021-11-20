@@ -137,7 +137,7 @@ class StockDetailsView: UIView {
     lazy var stockDetailsVariationLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Değişim"
+        label.text = "Değişim:"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
