@@ -12,12 +12,9 @@ target 'IMKBApp' do
   pod 'RxGesture'
   pod 'XCoordinator', '~> 2.0'
   pod 'XCoordinator/RxSwift', '~> 2.0'
-  pod 'XCoordinator/Combine', '~> 2.0'
-  pod 'Kingfisher', '~> 5.0'
   pod 'Action'
   pod 'Material', '~> 3.1.0'
   pod 'CryptoSwift', '~> 1.4.1'
-  pod 'SwiftChart'
   pod 'Charts'
   pod 'iProgressHUD', '~> 1.1.1'
 

@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 import RxGesture
 import XCoordinator
-import Kingfisher
 import Action
 import Charts
 
@@ -25,19 +24,18 @@ class StockDetailsViewController: UIViewController, BindableType {
     override func loadView() {
         view = stockDetailsView
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.backgroundColor = .red
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-    
-    
+        
     override func viewDidLoad() {
     }
 
 func bindViewModel() {
-    
-    
+        
     viewModel.output.isDown.subscribe(onNext: { isDown in
         self.isDown = isDown
         let image1 =  UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
@@ -66,8 +64,7 @@ func bindViewModel() {
     viewModel.output.count.bind(to: stockDetailsView.stockDetailsCountLabel.rx.text).disposed(by: disposeBag)
     
     viewModel.output.graphicData.subscribe(onNext: { graphicData in
-        self.createChart(graphicData: graphicData, upperLimit: self.getUpperLimit(graphicData: graphicData))
-        
+        self.createChart(graphicData: graphicData, upperLimit: self.getUpperLimit(graphicData: graphicData))        
     }).disposed(by: disposeBag)
     
    }

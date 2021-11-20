@@ -12,16 +12,12 @@ import XCoordinator
 import Action
 
 class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInput, StockDetailsViewModelOutput , StockDetailsViewModelStoredProperties {
-    
-    
+        
     let disposeBag = DisposeBag()
     
     // MARK: -Inputs-
     
-    
     // MARK: -Actions-
-    
-
     
     // MARK: -Outputs-
     var id = BehaviorSubject<Int>(value: 0)
@@ -48,7 +44,6 @@ class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInp
     var handshakeResponse: HandshakeResponse
     
     // MARK: -Initialization-
-    
     init(router: UnownedRouter<StockListRoute>, stockId: Int, handshakeResponse: HandshakeResponse) {
         self.router = router
         self.stockId = stockId
@@ -56,8 +51,7 @@ class StockDetailsViewModelImpl: StockDetailsViewModel, StockDetailsViewModelInp
         
         fetchStockDetails(id: handshakeResponse.getStockId(id: stockId))
     }
-    
-    
+        
     func fetchStockDetails(id: String) {
         var params: [String: Any] = [String: Any]()
         params["id"] = id

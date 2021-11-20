@@ -85,7 +85,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsMinimumLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .right
         label.text = "Günlük Düşük "
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -95,7 +95,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsMaximumLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.text = "Günlük Yüksek"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -105,7 +105,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsCountLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.text = "Adet"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -115,7 +115,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsLowestLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.text = "Taban"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -125,7 +125,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsHighestLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.text = "Tavan"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -135,7 +135,7 @@ class StockDetailsView: UIView {
     
     lazy var stockDetailsVariationLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.text = "Değişim:"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
