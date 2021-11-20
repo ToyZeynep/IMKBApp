@@ -10,8 +10,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxGesture
-import XCoordinator
-import Kingfisher
 import Action
 
 
