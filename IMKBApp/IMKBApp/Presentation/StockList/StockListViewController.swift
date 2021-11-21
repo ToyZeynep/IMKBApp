@@ -53,7 +53,7 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == "" {
-            self.viewModel.fetchStockList(handshakeResponse: self.viewModel.storedProperties.handshakeResponse, periodTag: "all")
+            self.viewModel.fetchStockList(periodTag: self.viewModel.storedProperties.handshakeResponse.getPeriodParameter(periodTag: PeriodTag.all.rawValue))
         } else {
             filterBySymbol(searchText: textField.text!)
         }
@@ -96,17 +96,20 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         
         stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
     }
+    
     func setVariationImageView(isDown: Bool , cell: StockListCell) {
         let upImage =  UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
         let downImage =  UIImage(named: "down")?.withRenderingMode(.alwaysTemplate)
         cell.stockListCellVariationImageView.tintColor = isDown ? .red : .green
         cell.stockListCellVariationImageView.image = isDown ? downImage : upImage
     }
+    
     func registerTableViewCell() {
         stockListView.stockListTableView.delegate = self
         stockListView.stockListTableView.register(StockListCell.self, forCellReuseIdentifier: cellIdentifier)
         stockListView.stockListTableView.sectionHeaderHeight = 20
     }
+    
     func setTableViewCellColor(cell: StockListCell, row: Int){
         if ((row % 2) != 0) {
             cell.contentView.backgroundColor = .lightGray

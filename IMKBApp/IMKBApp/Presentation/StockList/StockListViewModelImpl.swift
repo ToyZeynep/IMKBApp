@@ -33,7 +33,7 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
                 if UserDefaults.standard.string(forKey: "PeriodTag") != UserDefaults.standard.string(forKey: "LastPeriod") {
                     let periodTag = UserDefaults.standard.string(forKey: "PeriodTag")
                     UserDefaults.standard.set(periodTag, forKey: "LastPeriod")
-                    fetchStockList(handshakeResponse: handshakeResponse, periodTag: periodTag!)
+                    fetchStockList(periodTag: handshakeResponse.getPeriodParameter(periodTag: periodTag!))
                 }
             }
         }).disposed(by: self.disposeBag)
@@ -59,12 +59,12 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
         self.handshakeResponse = handshakeResponse
         
         UserDefaults.standard.set(handshakeResponse.authorization, forKey: "Authorization")
-        self.fetchStockList(handshakeResponse: handshakeResponse, periodTag: PeriodTag.all.rawValue)
+        self.fetchStockList(periodTag: handshakeResponse.getPeriodParameter(periodTag: PeriodTag.all.rawValue))
     }
     
-    func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String ) {
+    func fetchStockList(periodTag: String ) {
         var params: [String: Any] = [String: Any]()
-        params["period"] = handshakeResponse.getPeriodParameter(periodTag: "all")
+        params["period"] = periodTag
         
         stockListUseCase.stockList(params: params).subscribe(onNext: { response in
             if (response.status?.isSuccess)! {

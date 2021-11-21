@@ -55,6 +55,7 @@ enum StocksEndPoint: APIConfiguration {
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
         
+        // HTTP Header
         let token = UserDefaults.standard.string(forKey: "Authorization")
         urlRequest.setValue(HTTPHeaderFieldValue.json.rawValue, forHTTPHeaderField: HTTPHeaderFieldKey.contentType.rawValue)
         urlRequest.setValue(token ?? "", forHTTPHeaderField: HTTPHeaderFieldKey.XVPAuthorization.rawValue)

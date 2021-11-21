@@ -27,7 +27,6 @@ class LoginViewController: UIViewController,BindableType {
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      //  navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationController?.navigationBar.backgroundColor = .red
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
@@ -46,7 +45,6 @@ class LoginViewController: UIViewController,BindableType {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func setUpProgressHud(){

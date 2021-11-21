@@ -18,10 +18,6 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
     
     // MARK: -Outputs-
     var handshakeResponse = PublishSubject<HandshakeResponse>()
-    var aesKey =  BehaviorSubject<String> (value: "")
-    var aesIV =  BehaviorSubject<String> (value: "")
-    var authorization =  BehaviorSubject<String> (value: "")
-    var lifeTime =  BehaviorSubject<String> (value: "")
     
     // MARK: -Stored properties-
     private let router: UnownedRouter<AppRoute>

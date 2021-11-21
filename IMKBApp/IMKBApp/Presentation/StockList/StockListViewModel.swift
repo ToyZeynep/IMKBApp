@@ -29,7 +29,7 @@ protocol StockListViewModel{
     var output: StockListViewModelOutput { get }
     var storedProperties: StockListViewModelStoredProperties { get }
     
-    func fetchStockList(handshakeResponse: HandshakeResponse, periodTag: String )
+    func fetchStockList(periodTag: String )
 }
 
 extension StockListViewModel where Self:  StockListViewModelInput & StockListViewModelOutput & StockListViewModelStoredProperties {
