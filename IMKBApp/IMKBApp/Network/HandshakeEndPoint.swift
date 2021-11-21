@@ -12,26 +12,21 @@ enum HandshakeEndPoint: APIConfiguration {
     
     case token(params: [String: Any])
    
-    
     var tokenUrl : String {
     return "api/handshake/"
     }
     
-
         var method: HTTPMethod {
             switch self {
             case .token:
                 return .post
-           
             }
         }
-    
     
     var path: String {
         switch self {
         case .token:
             return tokenUrl + "start"
-       
         }
     }
     
@@ -39,7 +34,6 @@ enum HandshakeEndPoint: APIConfiguration {
         switch self {
         case .token(let params):
             return params
-        
         }
     }
     
@@ -51,7 +45,6 @@ enum HandshakeEndPoint: APIConfiguration {
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
-        
         
         // Parameters
         let encoding: ParameterEncoding = {
@@ -65,6 +58,5 @@ enum HandshakeEndPoint: APIConfiguration {
         print(urlRequest)
         return try encoding.encode(urlRequest, with: parameters)
         print(urlRequest)
-        
     }
 }

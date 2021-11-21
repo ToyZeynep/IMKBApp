@@ -10,8 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxGesture
-import XCoordinator
 import iProgressHUD
+
 class LoginViewController: UIViewController,BindableType {
     
     private let disposeBag = DisposeBag()
@@ -23,11 +23,8 @@ class LoginViewController: UIViewController,BindableType {
     }
     
     override func viewDidLoad() {
-       
     }
    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
       //  navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -35,8 +32,8 @@ class LoginViewController: UIViewController,BindableType {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         setUpProgressHud()
- 
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setNeedsStatusBarAppearanceUpdate()

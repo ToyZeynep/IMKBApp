@@ -24,17 +24,14 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
     var lifeTime =  BehaviorSubject<String> (value: "")
     
     // MARK: -Stored properties-
-    
     private let router: UnownedRouter<AppRoute>
     internal let tokenUseCase = TokenUseCase()
     
     // MARK: -Initialization-
-    
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
-        
     }
-   
+    
     func getAuth(){
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         let modelName = UIDevice.modelName
@@ -51,8 +48,6 @@ class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOut
             if  response.status?.isSuccess != false {
                 self.router.trigger(.stockList(hanshakeRespose: response))
             }
-            
-            
         }).disposed(by: disposeBag)
     }
 }

@@ -36,7 +36,7 @@ func bindViewModel() {
     viewModel.output.isDown.subscribe(onNext: { isDown in
         self.setVariationImageView(isDown: isDown)
     }).disposed(by:disposeBag)
-
+    
     viewModel.output.symbol.bind(to: stockDetailsView.stockDetailsSymbolLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.price.bind(to: stockDetailsView.stockDetailsPriceLabel.rx.text).disposed(by: disposeBag)
     viewModel.output.difference.bind(to: stockDetailsView.stockDetailsDifferenceLabel.rx.text).disposed(by: disposeBag)

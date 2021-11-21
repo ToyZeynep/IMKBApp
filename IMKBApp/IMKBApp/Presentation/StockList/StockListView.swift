@@ -43,8 +43,8 @@ class StockListView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-  
-    lazy var stockListSearchTextField : UITextField = {
+    
+    lazy var stockListSearchTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
         textField.placeholder = "Ara"

@@ -15,18 +15,12 @@ import Action
 import iProgressHUD
 
 class StockListViewController: UIViewController, BindableType, UITableViewDelegate, UITextFieldDelegate {
- 
-    
     
     private let cellIdentifier = String(describing: StockListCell.self)
-    private let headerId = "headerId"
     let disposeBag = DisposeBag()
     var stockListView = StockListView()
     var viewModel: StockListViewModel!
     var stockList = [Stocks]()
-    var stocks = [Stocks]()
-    
-    
     
     override func loadView() {
         view = stockListView
@@ -45,7 +39,6 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,14 +51,12 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == "" {
             self.viewModel.fetchStockList(handshakeResponse: self.viewModel.storedProperties.handshakeResponse, periodTag: "all")
         } else {
             filterBySymbol(searchText: textField.text!)
         }
-        
         return true
     }
     
@@ -79,8 +70,6 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         self.viewModel.output.stockList.onNext(filterList)
     }
     
-    
-    
     func bindViewModel() {
         
         viewModel.output.stockList.subscribe(onNext: { stockList in
@@ -89,31 +78,16 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         }).disposed(by:disposeBag)
         
         viewModel.output.stockList.bind(to: stockListView.stockListTableView.rx.items(cellIdentifier:cellIdentifier , cellType: StockListCell.self)){[self] row, model, cell in
-           
-            let image1 =  UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
-            let image2 =  UIImage(named: "down")?.withRenderingMode(.alwaysTemplate)
-            var image = UIImage()
-            if model.isDown == true {
-                image = image2!
-                cell.stockListCellVariationImageView.tintColor = .red
-            } else{
-                image = image1!
-                cell.stockListCellVariationImageView.tintColor = .green
-            }
             
-            cell.stockListCellVariationImageView.image = image
+            setVariationImageView(isDown: model.isDown!, cell: cell)
             cell.stockListCellSymbolLabel.text =  model.getSymbol(aesKey: self.viewModel.storedProperties.handshakeResponse.aesKey!, aesIV: self.viewModel.storedProperties.handshakeResponse.aesIV!)
-            cell.stockListCellPriceLabel.text = String(format: "%0.2f" , model.price!)
-            cell.stockListCellDifferenceLabel.text = String(format: "%0.2f" , model.difference!)
-            cell.stockListCellVolumeLabel.text = String(format: "%0.2f" , model.volume!)
-            cell.stockListCellBidLabel.text = String(format: "%0.2f" , model.bid!)
-            cell.stockListCellOfferLabel.text = String(format: "%0.2f" , model.offer!)
+            cell.stockListCellPriceLabel.text = model.price!.toString()
+            cell.stockListCellDifferenceLabel.text = abs(model.difference!).toString()
+            cell.stockListCellVolumeLabel.text = model.volume!.toString()
+            cell.stockListCellBidLabel.text = model.bid!.toString()
+            cell.stockListCellOfferLabel.text = model.offer!.toString()
             
-            if ((row % 2) != 0) {
-                cell.contentView.backgroundColor = .lightGray
-            } else {
-                cell.contentView.backgroundColor = .white
-            }
+            self.setTableViewCellColor(cell: cell, row: row)
         }.disposed(by: disposeBag)
         
         stockListView.stockListLeftMenuButton.rx.tapGesture().when(.recognized).subscribe(onNext:{  gesture in
@@ -121,15 +95,24 @@ class StockListViewController: UIViewController, BindableType, UITableViewDelega
         }).disposed(by: disposeBag)
         
         stockListView.stockListTableView.rx.modelSelected(Stocks.self).bind(to: viewModel.input.selectedStock).disposed(by: disposeBag)
-        
     }
-    
-    
+    func setVariationImageView(isDown: Bool , cell: StockListCell) {
+        let upImage =  UIImage(named: "up")?.withRenderingMode(.alwaysTemplate)
+        let downImage =  UIImage(named: "down")?.withRenderingMode(.alwaysTemplate)
+        cell.stockListCellVariationImageView.tintColor = isDown ? .red : .green
+        cell.stockListCellVariationImageView.image = isDown ? downImage : upImage
+    }
     func registerTableViewCell() {
         stockListView.stockListTableView.delegate = self
         stockListView.stockListTableView.register(StockListCell.self, forCellReuseIdentifier: cellIdentifier)
         stockListView.stockListTableView.sectionHeaderHeight = 20
-     
+    }
+    func setTableViewCellColor(cell: StockListCell, row: Int){
+        if ((row % 2) != 0) {
+            cell.contentView.backgroundColor = .lightGray
+        } else {
+            cell.contentView.backgroundColor = .white
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

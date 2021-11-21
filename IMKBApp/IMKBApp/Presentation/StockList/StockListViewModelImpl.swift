@@ -12,18 +12,20 @@ import XCoordinator
 import Action
 
 class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, StockListViewModelOutput , StockListViewModelStoredProperties {
-
+  
+    
+    
     let disposeBag = DisposeBag()
     
     // MARK: -Inputs-
-   private(set) lazy var selectedStock = selectedStockActions.inputs
-   private(set) lazy var showLeftMenu = showLeftMenuCoordinator.inputs
-
+    private(set) lazy var selectedStock = selectedStockActions.inputs
+    private(set) lazy var showLeftMenu = showLeftMenuCoordinator.inputs
+    
     // MARK: -Actions-
     lazy var selectedStockActions = Action<Stocks, Void> { [unowned self] stock in
         self.router.rx.trigger(.stockDetail(stockId: stock.id!, handshakeRespose: handshakeResponse))
-        }
-        
+    }
+    
     lazy var showLeftMenuCoordinator = Action<Bool, Void> { [unowned self] success in
         let subject = PublishSubject<Void>()
         subject.subscribe(onNext: {
@@ -41,15 +43,14 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
     // MARK: -Outputs-
     
     var stockListResponse = PublishSubject<StockListResponse>()
-   
+    
     var stockList = PublishSubject<[Stocks]>()
-
+    
     // MARK: -Stored properties-
     
     private let router: UnownedRouter<StockListRoute>
-     var stockListUseCase = StockListUseCase()
-     var handshakeResponse : HandshakeResponse
-   
+    var stockListUseCase = StockListUseCase()
+    var handshakeResponse : HandshakeResponse
     
     // MARK: -Initialization-
     
@@ -60,7 +61,6 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
         UserDefaults.standard.set(handshakeResponse.authorization, forKey: "Authorization")
         self.fetchStockList(handshakeResponse: handshakeResponse, periodTag: PeriodTag.all.rawValue)
     }
-    
     
     func fetchStockList(handshakeResponse: HandshakeResponse ,periodTag: String ) {
         var params: [String: Any] = [String: Any]()
@@ -75,8 +75,4 @@ class StockListViewModelImpl: StockListViewModel, StockListViewModelInput, Stock
         }).disposed(by: disposeBag)
     }
     
-    
-    func toLeftMenu(){
-  //      router.trigger(.leftMenu(handshakeRespose: handshakeResponse))
-    }
 }

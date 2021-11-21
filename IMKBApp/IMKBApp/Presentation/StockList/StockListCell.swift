@@ -13,8 +13,7 @@ class StockListCell: UITableViewCell {
     
     var disposeBag: DisposeBag = DisposeBag()
     
-    lazy var stockListCellContentView : UIView = {
-     
+    lazy var stockListCellContentView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
@@ -28,8 +27,8 @@ class StockListCell: UITableViewCell {
         view.layer.rasterizationScale = UIScreen.main.scale
         return view
     }()
-
-    lazy var stockListCellSymbolLabel : UILabel = {
+    
+    lazy var stockListCellSymbolLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -41,7 +40,7 @@ class StockListCell: UITableViewCell {
         return label
     } ()
     
-    lazy var stockListCellPriceLabel : UILabel = {
+    lazy var stockListCellPriceLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -52,9 +51,8 @@ class StockListCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
- 
     
-    lazy var stockListCellDifferenceLabel : UILabel = {
+    lazy var stockListCellDifferenceLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -65,8 +63,8 @@ class StockListCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
- 
-    lazy var stockListCellVolumeLabel : UILabel = {
+    
+    lazy var stockListCellVolumeLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -78,7 +76,7 @@ class StockListCell: UITableViewCell {
         return label
     } ()
     
-    lazy var stockListCellBidLabel : UILabel = {
+    lazy var stockListCellBidLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -89,9 +87,8 @@ class StockListCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     } ()
- 
-
-    lazy var stockListCellOfferLabel : UILabel = {
+    
+    lazy var stockListCellOfferLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.textColor = UIColor.black
@@ -104,7 +101,7 @@ class StockListCell: UITableViewCell {
     } ()
     
     lazy var stockListCellVariationImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "upDown")
         imageView.backgroundColor = .clear
@@ -112,7 +109,6 @@ class StockListCell: UITableViewCell {
         imageView.layer.masksToBounds = true
         return imageView
     }()
-
     
     lazy var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
@@ -121,16 +117,16 @@ class StockListCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-          super.init(style: style, reuseIdentifier: reuseIdentifier)
-          sizeToFit()
-          layoutIfNeeded()
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        sizeToFit()
+        layoutIfNeeded()
         setStockListCellContentView ()
-      }
-      
-      required init?(coder aDecoder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
-
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()

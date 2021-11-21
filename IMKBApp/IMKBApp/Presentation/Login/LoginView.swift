@@ -24,7 +24,7 @@ class LoginView: UIView {
         progressHud.indicatorColor = .white
         progressHud.modalColor = .white
         progressHud.alphaModal = 0.95
-        progressHud.boxSize = 40
+        progressHud.boxSize = 35
         return progressHud
     }()
     
@@ -37,7 +37,6 @@ class LoginView: UIView {
         return view
     }()
     
-    
     lazy var loginImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,19 +47,17 @@ class LoginView: UIView {
         return imageView
     }()
     
-    lazy var loginStartButton : UIButton = {
+    lazy var loginStartButton: UIButton = {
         var button = UIButton()
         button.setTitle("IMKB Hisse Senetleri / Endeksler", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor(rgb: 0xF5F5F5)
         button.titleLabel?.font = .preferredFont(forTextStyle: .body, compatibleWith: .none)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.imageEdgeInsets = EdgeInsets(top: 3, left: 3, bottom: 3 , right: 3)
         return button
     }()
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLoginContentView()
@@ -69,6 +66,5 @@ class LoginView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
 
 }

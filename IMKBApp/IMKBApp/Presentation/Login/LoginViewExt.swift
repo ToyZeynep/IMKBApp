@@ -6,9 +6,7 @@
 //
 
 import Foundation
-
 import UIKit
-import Foundation
 
 extension LoginView {
     func setLoginContentView()  {
@@ -16,7 +14,6 @@ extension LoginView {
         loginContentView.backgroundColor = .clear
         if #available(iOS 11.0, *) {
             loginContentView.setTop(equalTo: safeAreaLayoutGuide.topAnchor)
-        } else {
         }
         loginContentView.setLeft(equalTo: leftAnchor)
         loginContentView.setRight(equalTo: rightAnchor)
@@ -32,7 +29,6 @@ extension LoginView {
         loginImageView.setCenterY(equalTo: loginContentView.centerYAnchor)
         loginImageView.setWidth(width: 300)
         loginImageView.setHeight(height: 100)
-        
     }
     
     func setLoginStartButton(){
@@ -42,5 +38,5 @@ extension LoginView {
         loginStartButton.setTop(equalTo: loginImageView.bottomAnchor, constant: 40)
         loginStartButton.setHeight(height: 50)
     }
-
+    
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 import Foundation
-struct GraphicData : Codable {
-    let day : Int?
-    let value : Double?
+struct GraphicData: Codable {
+    let day: Int?
+    let value: Double?
 
     enum CodingKeys: String, CodingKey {
 

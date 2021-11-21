@@ -8,19 +8,18 @@
 import Foundation
 import CryptoSwift
 
-struct Stocks : Codable {
-    let id : Int?
-    let isDown : Bool?
-    let isUp : Bool?
-    let bid : Double?
-    let difference : Double?
-    let offer : Double?
-    let price : Double?
-    let volume : Double?
-    let symbol : String?
+struct Stocks: Codable {
+    let id: Int?
+    let isDown: Bool?
+    let isUp: Bool?
+    let bid: Double?
+    let difference: Double?
+    let offer: Double?
+    let price: Double?
+    let volume: Double?
+    let symbol: String?
 
     enum CodingKeys: String, CodingKey {
-
         case id = "id"
         case isDown = "isDown"
         case isUp = "isUp"

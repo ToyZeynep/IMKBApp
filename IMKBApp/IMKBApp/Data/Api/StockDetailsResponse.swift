@@ -8,22 +8,22 @@
 import Foundation
 import Foundation
 struct StockDetailsResponse : Codable {
-    let isDown : Bool?
-    let isUp : Bool?
-    let bid : Double?
-    let channge : Double?
-    let count : Int?
-    let difference : Double?
-    let offer : Double?
-    let highest : Double?
-    let lowest : Double?
-    let maximum : Double?
-    let minimum : Double?
-    let price : Double?
-    let volume : Double?
-    let symbol : String?
-    let graphicData : [GraphicData]?
-    let status : Status?
+    let isDown: Bool?
+    let isUp: Bool?
+    let bid: Double?
+    let channge: Double?
+    let count: Int?
+    let difference: Double?
+    let offer: Double?
+    let highest: Double?
+    let lowest: Double?
+    let maximum: Double?
+    let minimum: Double?
+    let price: Double?
+    let volume: Double?
+    let symbol: String?
+    let graphicData: [GraphicData]?
+    let status: Status?
 
     enum CodingKeys: String, CodingKey {
 

@@ -23,6 +23,7 @@ extension StockListCell {
         setStockListCellOfferLabel()
         setStockListCellVariationImageView()
     }
+    
     func setStockListCellSymbolLabel(){
         stockListCellContentView.addSubview(stockListCellSymbolLabel)
         stockListCellSymbolLabel.setLeft(equalTo: stockListCellContentView.leftAnchor , constant: 10)
@@ -30,6 +31,7 @@ extension StockListCell {
         stockListCellSymbolLabel.setBottom(equalTo: stockListCellContentView.bottomAnchor , constant: -10)
         stockListCellSymbolLabel.setWidth(width: (UIScreen.main.bounds.width - 40) / 7)
     }
+    
     func setStockListCellPriceLabel(){
         stockListCellContentView.addSubview(stockListCellPriceLabel)
         stockListCellPriceLabel.setLeft(equalTo: stockListCellSymbolLabel.rightAnchor , constant: 10)
@@ -45,6 +47,7 @@ extension StockListCell {
         stockListCellDifferenceLabel.setBottom(equalTo: stockListCellContentView.bottomAnchor , constant: -10)
         stockListCellDifferenceLabel.setWidth(width: (UIScreen.main.bounds.width - 40) / 7)
     }
+    
     func setStockListCellVolumeLabel(){
         stockListCellContentView.addSubview(stockListCellVolumeLabel)
         stockListCellVolumeLabel.setLeft(equalTo: stockListCellDifferenceLabel.rightAnchor , constant: 10)
@@ -77,4 +80,5 @@ extension StockListCell {
         stockListCellVariationImageView.setBottom(equalTo: stockListCellContentView.bottomAnchor, constant: -10)
         stockListCellVariationImageView.setWidth(width: (UIScreen.main.bounds.width - 40) / 7)
     }
+    
 }

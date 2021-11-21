@@ -9,11 +9,11 @@ import Foundation
 import CryptoSwift
 
 struct HandshakeResponse: Codable {
-    var aesKey : String?
-    var aesIV : String?
-    var authorization : String?
-    var lifeTime : String?
-    var status : Status?
+    var aesKey: String?
+    var aesIV: String?
+    var authorization: String?
+    var lifeTime: String?
+    var status: Status?
 
     enum CodingKeys: String, CodingKey {
 

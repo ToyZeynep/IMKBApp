@@ -53,7 +53,7 @@ extension StockListView {
         stockListSearchTextField.setRight(equalTo: stockListContentView.rightAnchor, constant: -5)
         stockListSearchTextField.setLeft(equalTo: stockListContentView.leftAnchor, constant: 5)
     }
-
+    
     func setstockListTableView(){
         stockListContentView.addSubview(stockListTableView)
         stockListTableView.setTop(equalTo: stockListSearchTextField.bottomAnchor )

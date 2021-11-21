@@ -6,9 +6,7 @@
 //
 
 import Foundation
-
 import RxSwift
-import XCoordinator
 import Action
 
 protocol LoginViewModelInput {
@@ -22,8 +20,8 @@ protocol LoginViewModelOutput {
 protocol LoginViewModel {
     var input: LoginViewModelInput { get }
     var output: LoginViewModelOutput { get }
-    func getAuth()
     
+    func getAuth()
 }
 
 extension LoginViewModel where Self: LoginViewModelInput & LoginViewModelOutput {

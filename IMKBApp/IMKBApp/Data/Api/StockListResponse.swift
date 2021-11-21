@@ -7,11 +7,10 @@
 
 import Foundation
 struct StockListResponse : Codable {
-    let stocks : [Stocks]?
-    let status : Status?
+    let stocks: [Stocks]?
+    let status: Status?
 
     enum CodingKeys: String, CodingKey {
-
         case stocks = "stocks"
         case status = "status"
     }
