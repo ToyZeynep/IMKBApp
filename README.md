@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/75203610/142729996-a913b2e7-d6bd-4bd7-b20b-984360bd3a2c.png)
+
 
  ###  IMKBApp is an application that displays the list of stocks from the API and brings the details.
 
