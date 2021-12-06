@@ -43,7 +43,7 @@ class LoginView: UIView {
         imageView.image = UIImage(named: "loginLogo")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .clear
         return imageView
     }()
     

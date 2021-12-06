@@ -234,12 +234,12 @@
 		2252FC5927438190008CC886 /* IMKBApp */ = {
 			isa = PBXGroup;
 			children = (
-				2252FCC12743F729008CC886 /* Coordinators */,
-				2252FCB82743CA7B008CC886 /* Utils */,
-				2252FCAC2743C836008CC886 /* Presentation */,
-				2252FC8C2743933B008CC886 /* Data */,
-				2252FC8B27439316008CC886 /* Domain */,
 				2252FC8A2743930B008CC886 /* Network */,
+				2252FC8B27439316008CC886 /* Domain */,
+				2252FC8C2743933B008CC886 /* Data */,
+				2252FCC12743F729008CC886 /* Coordinators */,
+				2252FCAC2743C836008CC886 /* Presentation */,
+				2252FCB82743CA7B008CC886 /* Utils */,
 				2252FC5A27438190008CC886 /* AppDelegate.swift */,
 				2252FC5C27438190008CC886 /* SceneDelegate.swift */,
 				2252FC6327438191008CC886 /* Assets.xcassets */,
@@ -268,8 +268,8 @@
 		2252FC8A2743930B008CC886 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2252FC9027439407008CC886 /* ApiClient.swift */,
 				2252FC9227439416008CC886 /* ApiConfiguration.swift */,
+				2252FC9027439407008CC886 /* ApiClient.swift */,
 				2252FC9427439450008CC886 /* StocksEndPoint.swift */,
 				2252FC9627439477008CC886 /* HandshakeEndPoint.swift */,
 				22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */,
@@ -328,10 +328,10 @@
 		2252FCAC2743C836008CC886 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				224FD24F274786B100AAA4E9 /* StockDetails */,
-				222E120927467A28007AE59E /* LeftMenu */,
-				2252FCC4274418ED008CC886 /* StockList */,
 				2252FCAD2743C849008CC886 /* Login */,
+				2252FCC4274418ED008CC886 /* StockList */,
+				222E120927467A28007AE59E /* LeftMenu */,
+				224FD24F274786B100AAA4E9 /* StockDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -380,11 +380,11 @@
 			children = (
 				2252FCC527441943008CC886 /* StockListView.swift */,
 				2252FCC727441955008CC886 /* StockListViewExt.swift */,
+				2252FCC92744197B008CC886 /* StockListViewController.swift */,
 				2252FCCB27441993008CC886 /* StockListViewModel.swift */,
 				2252FCCD274419AD008CC886 /* StockListViewModelImpl.swift */,
 				2252FCCF274419FF008CC886 /* StockListCell.swift */,
 				2252FCD127441A1B008CC886 /* StockListCellExt.swift */,
-				2252FCC92744197B008CC886 /* StockListViewController.swift */,
 			);
 			path = StockList;
 			sourceTree = "<group>";

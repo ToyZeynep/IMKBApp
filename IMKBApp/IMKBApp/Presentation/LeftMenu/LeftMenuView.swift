@@ -44,7 +44,6 @@ class LeftMenuView: UIView {
         label.textColor = UIColor.black
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "VERIPARK"
         label.numberOfLines = 1
         label.textColor = .red
         label.translatesAutoresizingMaskIntoConstraints = false
