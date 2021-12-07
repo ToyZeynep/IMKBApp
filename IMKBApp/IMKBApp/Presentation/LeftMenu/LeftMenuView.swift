@@ -64,61 +64,32 @@ class LeftMenuView: UIView {
     } ()
     
     lazy var leftMenuAllStocksButton: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Hisse ve Endeksler", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = HighlightedButton(title: "Hisse Ve Endeksler")
         return button
     }()
     
     lazy var leftMenuIncreasingButton: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Yükselenler", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
+        let button = HighlightedButton(title: "Yükselenler")
         return button
     }()
     
     lazy var leftMenuDecreasingButton: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Düşenler", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
+        let button = HighlightedButton(title: "Düşenler")
         return button
     }()
     
     lazy var leftMenuVolume30Button: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Hacme Göre - 30", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
+        let button = HighlightedButton(title: "Hacme Göre-30")
         return button
     }()
     
     lazy var leftMenuVolume50Button: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Hacme Göre - 50", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
+        let button = HighlightedButton(title: "Hacme Göre-50")
         return button
     }()
     
     lazy var leftMenuVolume100Button: HighlightedButton = {
-        let button = HighlightedButton(type: .custom)
-        button.setTitle("Hacme Göre - 100", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
+        let button = HighlightedButton(title: "Hacme Göre-100")
         return button
     }()
 
@@ -140,7 +111,6 @@ class LeftMenuView: UIView {
     }
     
     func setupGradientView(view: UIView){
-        
         gradient.colors = [UIColor.black.withAlphaComponent(0.0).cgColor, UIColor.black.withAlphaComponent(0.6).cgColor]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)

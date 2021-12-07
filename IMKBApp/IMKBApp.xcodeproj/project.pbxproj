@@ -62,6 +62,7 @@
 		2252FCD227441A1B008CC886 /* StockListCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2252FCD127441A1B008CC886 /* StockListCellExt.swift */; };
 		229E20ED274925A60015D516 /* StatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E20EC274925A60015D516 /* StatusBarStyle.swift */; };
 		229E20EF27492DD50015D516 /* ButtonHighlighted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E20EE27492DD50015D516 /* ButtonHighlighted.swift */; };
+		22B2A99F275E06C20066FFDA /* CustomMyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B2A99E275E06C20066FFDA /* CustomMyLabel.swift */; };
 		22FC5D132745026000D7DD07 /* StockListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC5D122745026000D7DD07 /* StockListCoordinator.swift */; };
 		22FC5D152745582D00D7DD07 /* HttpHeaderConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */; };
 		3342B9BDECA286915DF0426F /* Pods_IMKBApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8164E07CF6F9C8D2830BD /* Pods_IMKBApp.framework */; };
@@ -144,6 +145,7 @@
 		2252FCD127441A1B008CC886 /* StockListCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCellExt.swift; sourceTree = "<group>"; };
 		229E20EC274925A60015D516 /* StatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStyle.swift; sourceTree = "<group>"; };
 		229E20EE27492DD50015D516 /* ButtonHighlighted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHighlighted.swift; sourceTree = "<group>"; };
+		22B2A99E275E06C20066FFDA /* CustomMyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMyLabel.swift; sourceTree = "<group>"; };
 		22FC5D122745026000D7DD07 /* StockListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListCoordinator.swift; sourceTree = "<group>"; };
 		22FC5D142745582D00D7DD07 /* HttpHeaderConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderConstant.swift; sourceTree = "<group>"; };
 		631C0C12FCFBEE323B483F33 /* Pods_IMKBAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKBAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +363,7 @@
 				224FD26327482F6A00AAA4E9 /* PresentableRxExt.swift */,
 				229E20EC274925A60015D516 /* StatusBarStyle.swift */,
 				229E20EE27492DD50015D516 /* ButtonHighlighted.swift */,
+				22B2A99E275E06C20066FFDA /* CustomMyLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				2252FCA32743BC0F008CC886 /* HandshakeResponse.swift in Sources */,
 				2252FC9327439416008CC886 /* ApiConfiguration.swift in Sources */,
 				229E20EF27492DD50015D516 /* ButtonHighlighted.swift in Sources */,
+				22B2A99F275E06C20066FFDA /* CustomMyLabel.swift in Sources */,
 				2252FCC827441955008CC886 /* StockListViewExt.swift in Sources */,
 				2252FC9B2743A9A4008CC886 /* StcokDetailsUseCase.swift in Sources */,
 				222E120F27467C1D007AE59E /* LeftMenuViewController.swift in Sources */,

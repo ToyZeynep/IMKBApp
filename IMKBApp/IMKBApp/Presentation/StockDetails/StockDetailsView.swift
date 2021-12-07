@@ -20,126 +20,62 @@ class StockDetailsView: UIView {
     }()
 
     lazy var stockDetailsSymbolLabel : UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Sembol: "
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Sembol", labelTextAlignment: .left)
         return label
     } ()
     
     lazy var stockDetailsPriceLabel : UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Fiyat: "
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Fiyat", labelTextAlignment: .left)
         return label
     } ()
     
     lazy var stockDetailsDifferenceLabel : UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "% Fark: "
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Fark", labelTextAlignment: .left)
         return label
     } ()
  
     lazy var stockDetailsVolumeLabel : UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Hacim: "
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Hacim", labelTextAlignment: .left)
         return label
     } ()
     
     lazy var stockDetailsBidLabel : UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Alış"
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Alış", labelTextAlignment: .left)
         return label
     } ()
 
     lazy var stockDetailsOfferLabel : UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.textColor = UIColor.black
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "Satış"
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Satış", labelTextAlignment: .left)
         return label
     } ()
     
     lazy var stockDetailsMinimumLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Günlük Düşük "
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Günlük düşük", labelTextAlignment: .right)
         return label
     }()
     
     lazy var stockDetailsMaximumLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Günlük Yüksek"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Günlük Yüksek", labelTextAlignment: .right)
         return label
     }()
     
     lazy var stockDetailsCountLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Adet"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Adet", labelTextAlignment: .right)
         return label
     }()
     
     lazy var stockDetailsLowestLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Taban"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = CustomMylabel(title: "Taban", labelTextAlignment: .right)
         return label
     }()
     
-    lazy var stockDetailsHighestLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Tavan"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    lazy var stockDetailsHighestLabel: CustomMylabel = {
+        let label = CustomMylabel(title: "Tavan", labelTextAlignment: .right)
         return label
     }()
     
-    lazy var stockDetailsVariationLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        label.text = "Değişim:"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    lazy var stockDetailsVariationLabel: CustomMylabel = {
+        let label = CustomMylabel(title: "Değişim", labelTextAlignment: .left )
         return label
     }()
     
