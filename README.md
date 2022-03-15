@@ -51,20 +51,16 @@ Versions I use:
 ## Screen Shots <a name="ScreenShots"></a>
  <table>
   <tr>
-    <td>LoginView</td>
     <td>StockListView</td>
     <td>Filtered StockList</td>
     <td>StockDetailsView</td>
-    <td>LeftMenu</td>
    
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/75203610/142729686-dfaac7bc-e2db-444e-ae4c-b603caa3c540.jpg" width=280 height=480></td>
     <td><img src="https://user-images.githubusercontent.com/75203610/142729725-071fcd3b-1fc8-491e-b2ce-b35254f81cd4.jpg" width=280 height=480></td>
     <td><img src="https://user-images.githubusercontent.com/75203610/142729811-ed94d06a-15a9-4fea-82e1-75eada629aaf.jpg" width=280 height=480></td>
     <td><img src="https://user-images.githubusercontent.com/75203610/142729839-f08ce00b-85a1-448d-bfd0-39af9ab862da.jpg" width=280 height=480></td>
-    <td><img src="https://user-images.githubusercontent.com/75203610/142729867-ffc6fd5c-2ac6-4ff6-94e9-51b2629a28c2.jpg" width=280 height=480></td>
-   
+
   </tr>
  </table>
 
